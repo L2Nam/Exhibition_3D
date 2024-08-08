@@ -3,20 +3,18 @@ using UnityEngine;
 public class ClickDetection : MonoBehaviour
 {
     public GameObject puzzle;
+    public GameObject dot;
     static public bool checkPuzzle = false;
     void Update()
     {
-        // Kiểm tra xem người dùng đã nhấp chuột chưa
         if (Input.GetMouseButtonDown(0))
         {
-            // Tạo một ray từ vị trí chuột
             Vector3 centerOfScreen = new Vector3(Screen.width / 2, Screen.height / 2, 0);
             Ray ray = Camera.main.ScreenPointToRay(centerOfScreen);
 
-            // Tạo một RaycastHit để lưu thông tin về đối tượng được chạm
             RaycastHit hit;
 
-            // Kiểm tra xem ray có chạm vào đối tượng nào không
+
             if (Physics.Raycast(ray, out hit))
             {
                 GameObject obj = hit.collider.gameObject;
@@ -109,9 +107,26 @@ public class ClickDetection : MonoBehaviour
             puzzle.SetActive(true);
             checkPuzzle = true;
         }
+        if (Input.GetMouseButtonDown(1))
+        {
+            dot.SetActive(true);
+            int childCount = transform.childCount;
+            for (int i = 0; i < childCount; i++)
+            {
+                Transform childTransform = transform.GetChild(i);
+                GameObject childObj = childTransform.gameObject;
+                if (childObj.activeSelf && childObj.tag == "popup")
+                {
+                    // Nếu đang hiển thị, đóng popup
+                    childObj.SetActive(false);
+                    Cursor.lockState = CursorLockMode.Locked;
+                }
+            }
+        }
     }
 
     void setActivePopup(string name) {
+        dot.SetActive(false);
         int childCount = transform.childCount;
         for (int i = 0; i < childCount; i++)
         {
