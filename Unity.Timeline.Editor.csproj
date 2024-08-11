@@ -1264,13 +1264,13 @@
       <Project>{1AACC1D9-C6D7-94DE-3E0F-D015AC44436E}</Project>
       <Name>Unity.Timeline</Name>
     </ProjectReference>
-    <ProjectReference Include="UnityEngine.TestRunner.csproj">
-      <Project>{DF0BF198-A1F6-947B-47B6-1785DF49CB8E}</Project>
-      <Name>UnityEngine.TestRunner</Name>
-    </ProjectReference>
     <ProjectReference Include="UnityEditor.TestRunner.csproj">
       <Project>{AF9C2D45-9D11-5A7C-32C2-9666BA47741A}</Project>
       <Name>UnityEditor.TestRunner</Name>
+    </ProjectReference>
+    <ProjectReference Include="UnityEngine.TestRunner.csproj">
+      <Project>{DF0BF198-A1F6-947B-47B6-1785DF49CB8E}</Project>
+      <Name>UnityEngine.TestRunner</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
