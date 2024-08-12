@@ -18,7 +18,7 @@ public class ClickDetection : MonoBehaviour
             if (Physics.Raycast(ray, out hit))
             {
                 GameObject obj = hit.collider.gameObject;
-                Debug.Log(obj);
+                Debug.Log(obj + " ===> " + obj.tag);
                 switch (obj.tag) {
                     case "forest":
                         setActivePopup("forest");
@@ -38,7 +38,6 @@ public class ClickDetection : MonoBehaviour
                     case "sheep":
                         setActivePopup("sheep");
                         break;
-
                     case "elephant":
                         setActivePopup("elephant");
                         break;
@@ -98,6 +97,10 @@ public class ClickDetection : MonoBehaviour
                         break;
                     case "tranhdongho":
                         setActivePopup("tranhdongho");
+                        break;
+                    case "VangoghStatue":
+                        Debug.Log("aaaaa");
+                        setActivePopup("VanGoghStatue");
                         break;
                 }
             }
