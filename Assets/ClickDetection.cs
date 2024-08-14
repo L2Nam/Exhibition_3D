@@ -99,7 +99,6 @@ public class ClickDetection : MonoBehaviour
                         setActivePopup("tranhdongho");
                         break;
                     case "VangoghStatue":
-                        Debug.Log("aaaaa");
                         setActivePopup("VanGoghStatue");
                         break;
                 }
