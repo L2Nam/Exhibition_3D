@@ -5,6 +5,7 @@ public class ClickDetection : MonoBehaviour
     public GameObject puzzle;
     public GameObject dot;
     static public bool checkPuzzle = false;
+    public bool checkPopup = true;
     void Update()
     {
         if (Input.GetMouseButtonDown(0))
@@ -111,6 +112,7 @@ public class ClickDetection : MonoBehaviour
         }
         if (Input.GetMouseButtonDown(1))
         {
+            checkPopup = false;
             dot.SetActive(true);
             int childCount = transform.childCount;
             for (int i = 0; i < childCount; i++)
@@ -133,7 +135,8 @@ public class ClickDetection : MonoBehaviour
         for (int i = 0; i < childCount; i++)
         {
             Transform childTransform = transform.GetChild(i);
-            if (childTransform.name == name) {
+            if (childTransform.name == name && !checkPopup) {
+                checkPopup = true;
                 childTransform.gameObject.SetActive(true);
             }
         }
