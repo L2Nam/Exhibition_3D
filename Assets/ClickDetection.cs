@@ -99,6 +99,18 @@ public class ClickDetection : MonoBehaviour
                     case "tranhdongho":
                         setActivePopup("tranhdongho");
                         break;
+                    case "redvineyard":
+                        setActivePopup("RedVineyard");
+                        break;
+                    case "floweringgarden":
+                        setActivePopup("floweringgarden");
+                        break;
+                    case "almond":
+                        setActivePopup("Almond");
+                        break;
+                    case "skull":
+                        setActivePopup("Skull");
+                        break;
                     case "VangoghStatue":
                         setActivePopup("VanGoghStatue");
                         break;
