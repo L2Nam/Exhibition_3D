@@ -114,14 +114,15 @@ public class ClickDetection : MonoBehaviour
                     case "VangoghStatue":
                         setActivePopup("VanGoghStatue");
                         break;
+                    //
+                    case "playgame":
+                        puzzle.SetActive(true);
+                        checkPuzzle = true;
+                        break;
                 }
             }
         }
-        if (Input.GetMouseButtonDown(2))
-        {
-            puzzle.SetActive(true);
-            checkPuzzle = true;
-        }
+
         if (Input.GetMouseButtonDown(1))
         {
             checkPopup = false;
