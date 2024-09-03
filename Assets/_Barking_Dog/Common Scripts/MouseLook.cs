@@ -5,6 +5,12 @@ public class MouseLook : MonoBehaviour
     public float speed = 5f;
     public float rotationSpeed = 2f;
     private float platform = 0f;
+    CharacterController controller;
+
+    void Awake()
+    {
+        controller = GetComponent<CharacterController>();
+    }
 
     void Update()
     {
@@ -19,13 +25,11 @@ public class MouseLook : MonoBehaviour
         float horizontal = Input.GetAxis("Horizontal");
         float vertical = Input.GetAxis("Vertical");
 
-        Vector3 movement = new Vector3(horizontal, 0, vertical) * speed * Time.deltaTime;
+        // Tạo vector di chuyển theo không gian cục bộ của camera
+        Vector3 movement = transform.right * horizontal + transform.forward * vertical;
+        movement *= speed * Time.deltaTime;
 
-        // Thực hiện Raycast để kiểm tra va chạm với tường
-        if (!IsWallBlocking(movement))
-        {
-            transform.Translate(movement);
-        }
+        controller.Move(movement);
 
         // mouse rotation
         float mouseX = Input.GetAxis("Mouse X");
@@ -35,22 +39,5 @@ public class MouseLook : MonoBehaviour
         transform.Rotate(Vector3.left, mouseY * rotationSpeed, Space.Self);
 
         transform.position = new Vector3(transform.position.x, platform + 1.75f, transform.position.z);
-    }
-
-    bool IsWallBlocking(Vector3 movement)
-    {
-        Ray ray = new Ray(transform.position, movement.normalized);
-        RaycastHit hit;
-
-        // Kiểm tra va chạm với tường
-        if (Physics.Raycast(ray, out hit, movement.magnitude))
-        {
-            if (hit.collider.CompareTag("Wall"))
-            {
-                return true; // Nếu va chạm với tường và có tag "Wall", không di chuyển
-            }
-        }
-
-        return false; // Nếu không có va chạm hoặc không có tag "Wall", cho phép di chuyển
     }
 }

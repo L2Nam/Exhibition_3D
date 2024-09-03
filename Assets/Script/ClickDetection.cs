@@ -4,6 +4,7 @@ public class ClickDetection : MonoBehaviour
 {
     public GameObject puzzle;
     public GameObject dot;
+    public GameObject info;
     static public bool checkPuzzle = false;
     public bool checkPopup = true;
     void Update()
@@ -127,10 +128,10 @@ public class ClickDetection : MonoBehaviour
         {
             checkPopup = false;
             dot.SetActive(true);
-            int childCount = transform.childCount;
+            int childCount = info.transform.childCount;
             for (int i = 0; i < childCount; i++)
             {
-                Transform childTransform = transform.GetChild(i);
+                Transform childTransform = info.transform.GetChild(i);
                 GameObject childObj = childTransform.gameObject;
                 if (childObj.activeSelf && childObj.tag == "popup")
                 {
@@ -144,10 +145,10 @@ public class ClickDetection : MonoBehaviour
 
     void setActivePopup(string name) {
         dot.SetActive(false);
-        int childCount = transform.childCount;
+        int childCount = info.transform.childCount;
         for (int i = 0; i < childCount; i++)
         {
-            Transform childTransform = transform.GetChild(i);
+            Transform childTransform = info.transform.GetChild(i);
             if (childTransform.name == name && !checkPopup) {
                 checkPopup = true;
                 childTransform.gameObject.SetActive(true);
