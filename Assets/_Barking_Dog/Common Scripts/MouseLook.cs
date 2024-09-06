@@ -14,6 +14,9 @@ public class MouseLook : MonoBehaviour
 
     void Update()
     {
+        if (ClickDetection.checkPuzzle)
+            return;
+
         RaycastHit hit;
         Ray ray = new Ray(transform.position, Vector3.down);
         if (Physics.Raycast(ray, out hit))
