@@ -1,21 +1,21 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
-using TMPro;
-using UnityEngine.EventSystems;
-using System;
-using System.Threading.Tasks;
-using DG.Tweening;
+using UnityEngine.SceneManagement;
 
 
 public class PuzzleControl : MonoBehaviour
 {
     [SerializeField] GameObject win;
+    [SerializeField] GameObject dot;
     [SerializeField] Button btn_jigsaw;
     [SerializeField] Button btn_qa;
     [SerializeField] GameObject logo_jigsaw;
     [SerializeField] GameObject logo_qa;
+    [SerializeField] Camera mainCamera;
+    [SerializeField] GameObject choose_game;
+    [SerializeField] GameObject choose_mode_jigsaw;
+    [SerializeField] GameObject choose_painting;
+
 
     private void Awake()
     {
@@ -29,6 +29,58 @@ public class PuzzleControl : MonoBehaviour
         rectQa.anchoredPosition = new Vector2(screenWidth / 6, rectQa.anchoredPosition.y);
         logo_qa.transform.position = new Vector2(rectQa.transform.position.x, logo_qa.transform.position.y);
 
+    }
+
+    public void OnPuzzle()
+    {
+        choose_game.SetActive(true);
+        choose_mode_jigsaw.SetActive(false);
+        choose_painting.SetActive(false);
+    }
+
+    void SaveCameraPosition()
+    {
+        Vector3 camPosition = mainCamera.transform.position;
+        Vector3 camRotation = mainCamera.transform.eulerAngles;
+
+        PlayerPrefs.SetFloat("CameraPosX", camPosition.x);
+        PlayerPrefs.SetFloat("CameraPosY", camPosition.y);
+        PlayerPrefs.SetFloat("CameraPosZ", camPosition.z);
+
+        PlayerPrefs.SetFloat("CameraRotX", camRotation.x);
+        PlayerPrefs.SetFloat("CameraRotY", camRotation.y);
+        PlayerPrefs.SetFloat("CameraRotZ", camRotation.z);
+
+        PlayerPrefs.Save(); 
+    }
+
+    public void OnClickClose()
+    {
+        ClickDetection.checkPuzzle = false;
+        gameObject.SetActive(false);
+        Cursor.visible = false;
+        Cursor.lockState = CursorLockMode.Locked;
+        dot.SetActive(true);
+    }
+
+    public void OnClickJigsaw()
+    {
+        choose_game.SetActive(false);
+        choose_mode_jigsaw.SetActive(true);
+        choose_painting.SetActive(false);
+    }
+
+    public void OnClickJigsawMode()
+    {
+        choose_game.SetActive(false);
+        choose_mode_jigsaw.SetActive(false);
+        choose_painting.SetActive(true);
+    }
+
+    public void OnClickPainting()
+    {
+        SaveCameraPosition();
+        SceneManager.LoadScene("puzzle");
     }
 
     void checkWin()

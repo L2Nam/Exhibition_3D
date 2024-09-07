@@ -14,7 +14,6 @@ public class ClickDetection : MonoBehaviour
         {
             Vector3 centerOfScreen = new Vector3(Screen.width / 2, Screen.height / 2, 0);
             Ray ray = Camera.main.ScreenPointToRay(centerOfScreen);
-
             RaycastHit hit;
 
 
@@ -24,101 +23,101 @@ public class ClickDetection : MonoBehaviour
                 Debug.Log(obj + " ===> " + obj.tag);
                 float distance = Vector3.Distance(camera.transform.position, hit.point);
                 Debug.Log("Distance from camera to object: " + distance);
-                if (distance > 9)
+                if (distance > 9 || checkPuzzle)
                     return;
                 switch (obj.tag) {
                     case "forest":
-                        setActivePopup("forest");
+                        SetActivePopup("forest");
                         break;
                     case "house":
-                        setActivePopup("house");
+                        SetActivePopup("house");
                         break;
                     case "blue":
-                        setActivePopup("blue");
+                        SetActivePopup("blue");
                         break;
                     case "sunset":
-                        setActivePopup("sunset");
+                        SetActivePopup("sunset");
                         break;
                     case "redleaves":
-                        setActivePopup("redleaves");
+                        SetActivePopup("redleaves");
                         break;
                     case "sheep":
-                        setActivePopup("sheep");
+                        SetActivePopup("sheep");
                         break;
                     case "elephant":
-                        setActivePopup("elephant");
+                        SetActivePopup("elephant");
                         break;
                     case "bear":
-                        setActivePopup("bear");
+                        SetActivePopup("bear");
                         break;
                     case "human":
-                        setActivePopup("human");
+                        SetActivePopup("human");
                         break;
                     case "hourse":
-                        setActivePopup("hourse");
+                        SetActivePopup("hourse");
                         break;
                     case "lion":
-                        setActivePopup("lion");
+                        SetActivePopup("lion");
                         break;
                     case "dog":
-                        setActivePopup("dog");
+                        SetActivePopup("dog");
                         break;
                     case "cat":
-                        setActivePopup("cat");
+                        SetActivePopup("cat");
                         break;
                     case "vangogh1":
-                        setActivePopup("vangogh1");
+                        SetActivePopup("vangogh1");
                         break;
                     case "vangogh2":
-                        setActivePopup("vangogh2");
+                        SetActivePopup("vangogh2");
                         break;
                     case "cafenight":
-                        setActivePopup("cafenight");
+                        SetActivePopup("cafenight");
                         break;
                     case "starrynight":
-                        setActivePopup("starrynight");
+                        SetActivePopup("starrynight");
                         break;
                     case "rohne":
-                        setActivePopup("rohne");
+                        SetActivePopup("rohne");
                         break;
                     case "irises":
-                        setActivePopup("irises");
+                        SetActivePopup("irises");
                         break;
                     case "etten":
-                        setActivePopup("etten");
+                        SetActivePopup("etten");
                         break;
                     case "mama":
-                        setActivePopup("mama");
+                        SetActivePopup("mama");
                         break;
                     case "sunflower":
-                        setActivePopup("sunflower");
+                        SetActivePopup("sunflower");
                         break;
                     case "olive":
-                        setActivePopup("olive");
+                        SetActivePopup("olive");
                         break;
                     case "oldman":
-                        setActivePopup("oldman");
+                        SetActivePopup("oldman");
                         break;
                     case "doctor":
-                        setActivePopup("doctor");
+                        SetActivePopup("doctor");
                         break;
                     case "tranhdongho":
-                        setActivePopup("tranhdongho");
+                        SetActivePopup("tranhdongho");
                         break;
                     case "redvineyard":
-                        setActivePopup("RedVineyard");
+                        SetActivePopup("RedVineyard");
                         break;
                     case "floweringgarden":
-                        setActivePopup("floweringgarden");
+                        SetActivePopup("floweringgarden");
                         break;
                     case "almond":
-                        setActivePopup("Almond");
+                        SetActivePopup("Almond");
                         break;
                     case "skull":
-                        setActivePopup("Skull");
+                        SetActivePopup("Skull");
                         break;
                     case "VangoghStatue":
-                        setActivePopup("VanGoghStatue");
+                        SetActivePopup("VanGoghStatue");
                         break;
                     //
                     case "playgame":
@@ -151,7 +150,7 @@ public class ClickDetection : MonoBehaviour
         }
     }
 
-    void setActivePopup(string name) {
+    void SetActivePopup(string name) {
         dot.SetActive(false);
         int childCount = info.transform.childCount;
         for (int i = 0; i < childCount; i++)
