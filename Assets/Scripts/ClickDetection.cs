@@ -8,6 +8,12 @@ public class ClickDetection : MonoBehaviour
     public GameObject camera;
     static public bool checkPuzzle = false;
     public bool checkPopup = true;
+
+    private void Start()
+    {
+        restartAfterPuzzle();
+    }
+
     void Update()
     {
         if (Input.GetMouseButtonDown(0))
@@ -150,16 +156,34 @@ public class ClickDetection : MonoBehaviour
         }
     }
 
-    void SetActivePopup(string name) {
+    void restartAfterPuzzle()
+    {
+        if (PlayerPrefs.HasKey("CameraPosX"))
+        {
+            SetActivePopup("");
+            checkPuzzle = false;
+        }
+    }
+
+    void OnApplicationQuit()
+    {
+        PlayerPrefs.DeleteAll();
+        PlayerPrefs.Save();
+    }
+
+    public void SetActivePopup(string name) {
         dot.SetActive(false);
         int childCount = info.transform.childCount;
         for (int i = 0; i < childCount; i++)
         {
             Transform childTransform = info.transform.GetChild(i);
+            childTransform.gameObject.SetActive(false);
             if (childTransform.name == name && !checkPopup) {
                 checkPopup = true;
                 childTransform.gameObject.SetActive(true);
             }
         }
+        if (name == "")
+            dot.SetActive(true);
     }
 }

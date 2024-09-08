@@ -28,7 +28,6 @@ public class PuzzleControl : MonoBehaviour
         RectTransform rectQa = btn_qa.GetComponent<RectTransform>();
         rectQa.anchoredPosition = new Vector2(screenWidth / 6, rectQa.anchoredPosition.y);
         logo_qa.transform.position = new Vector2(rectQa.transform.position.x, logo_qa.transform.position.y);
-
     }
 
     public void OnPuzzle()
