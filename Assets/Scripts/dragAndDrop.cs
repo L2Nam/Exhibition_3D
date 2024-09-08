@@ -5,6 +5,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using System.Text.RegularExpressions;
 using static System.Net.Mime.MediaTypeNames;
+using DG.Tweening;
 
 public class dragAndDrop : MonoBehaviour
 {
@@ -17,9 +18,16 @@ public class dragAndDrop : MonoBehaviour
 
     [SerializeField] TextMeshProUGUI Timer;
 
-    bool movable = true;
+    [SerializeField] GameObject win;
+
+    [SerializeField] TextMeshProUGUI textComplete;
+
+    [SerializeField] GameObject btnManager;
+
 
     Vector3 originalPos;
+
+    bool movable = true;
 
     int clickCount;
 
@@ -46,8 +54,11 @@ public class dragAndDrop : MonoBehaviour
 
     private void OnMouseDown()
     {
-        Timer.GetComponent<Timer>().active = true;
-        mousePosistion = Input.mousePosition - GetMousePos();
+        if (OrgPuzzle.checkMovable && movable)
+        {
+            Timer.GetComponent<Timer>().active = true;
+            mousePosistion = Input.mousePosition - GetMousePos();
+        }
     }
 
     private void OnTriggerEnter(Collider other)
@@ -66,7 +77,7 @@ public class dragAndDrop : MonoBehaviour
 
     private void OnMouseDrag()
     {
-        if (movable)
+        if (OrgPuzzle.checkMovable && movable)
         {
             transform.position = Camera.main.ScreenToWorldPoint(Input.mousePosition - mousePosistion);
         }
@@ -74,7 +85,7 @@ public class dragAndDrop : MonoBehaviour
 
     private void OnMouseUp()
     {
-        if (movable)
+        if (OrgPuzzle.checkMovable && movable)
         {
             Debug.Log(posName);
             Debug.Log(inside);
@@ -98,6 +109,7 @@ public class dragAndDrop : MonoBehaviour
                     Timer.GetComponent<Timer>().active = false;
                     Debug.Log("over");
                     gameOver.enabled = true;
+                    WinEffect();
                 }
             }
             else
@@ -105,6 +117,26 @@ public class dragAndDrop : MonoBehaviour
                 transform.position = originalPos;
             }
         }
+    }
+
+    void WinEffect()
+    {
+        win.transform.SetAsLastSibling();
+        win.transform.DOLocalJump(Vector2.zero, 2f, 4, 2f).OnComplete(() =>
+        {
+            win.transform.DOLocalMove(new Vector2(0, -450), 1.2f).OnComplete(() =>
+            {
+                win.SetActive(false);
+                Color originalColor = textComplete.color;
+                textComplete.color = new Color(originalColor.r, originalColor.g, originalColor.b, 0);
+                textComplete.gameObject.SetActive(true);
+                // Tween alpha t? 0 ??n 1
+                textComplete.DOFade(1, 1.5f).OnComplete(() =>
+                {
+                    btnManager.SetActive(true);
+                });
+            });
+        });
     }
 
 }

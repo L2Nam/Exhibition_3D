@@ -28,8 +28,7 @@ public class ClickDetection : MonoBehaviour
                 GameObject obj = hit.collider.gameObject;
                 Debug.Log(obj + " ===> " + obj.tag);
                 float distance = Vector3.Distance(camera.transform.position, hit.point);
-                Debug.Log("Distance from camera to object: " + distance);
-                if (distance > 9 || checkPuzzle)
+                if (distance > 10 || checkPuzzle)
                     return;
                 switch (obj.tag) {
                     case "forest":
@@ -139,6 +138,8 @@ public class ClickDetection : MonoBehaviour
 
         if (Input.GetMouseButtonDown(1))
         {
+            if (checkPuzzle)
+                return;
             checkPopup = false;
             dot.SetActive(true);
             int childCount = info.transform.childCount;
@@ -172,18 +173,28 @@ public class ClickDetection : MonoBehaviour
     }
 
     public void SetActivePopup(string name) {
+        Debug.Log("SetActivePopup =>>> " + name);
+        if (name == "")
+        {
+            dot.SetActive(true);
+            checkPopup = false;
+            int childCounts = info.transform.childCount;
+            for (int i = 0; i < childCounts; i++)
+            {
+                Transform childTransform = info.transform.GetChild(i);
+                childTransform.gameObject.SetActive(false);
+            }
+            return;
+        }
         dot.SetActive(false);
         int childCount = info.transform.childCount;
         for (int i = 0; i < childCount; i++)
         {
             Transform childTransform = info.transform.GetChild(i);
-            childTransform.gameObject.SetActive(false);
             if (childTransform.name == name && !checkPopup) {
                 checkPopup = true;
                 childTransform.gameObject.SetActive(true);
             }
         }
-        if (name == "")
-            dot.SetActive(true);
     }
 }

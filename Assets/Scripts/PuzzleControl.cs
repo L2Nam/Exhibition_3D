@@ -56,6 +56,9 @@ public class PuzzleControl : MonoBehaviour
     public void OnClickClose()
     {
         ClickDetection.checkPuzzle = false;
+        choose_game.SetActive(true);
+        choose_mode_jigsaw.SetActive(false);
+        choose_painting.SetActive(false);
         gameObject.SetActive(false);
         Cursor.visible = false;
         Cursor.lockState = CursorLockMode.Locked;
@@ -80,18 +83,5 @@ public class PuzzleControl : MonoBehaviour
     {
         SaveCameraPosition();
         SceneManager.LoadScene("puzzle");
-    }
-
-    void checkWin()
-    {
-        //win.transform.SetAsLastSibling();
-        //win.transform.DOLocalJump(Vector2.zero, 2f, 4, 2f).OnComplete(() =>
-        //{
-        //    win.transform.DOLocalMove(new Vector2(0, -450), 1.2f).OnComplete(() =>
-        //    {
-        //        gameObject.SetActive(false);
-        //        ClickDetection.checkPuzzle = false;
-        //    });
-        //});
     }
 }
