@@ -155,6 +155,14 @@ public class ClickDetection : MonoBehaviour
                 }
             }
         }
+
+        if (Input.GetMouseButtonDown(2))
+        {
+            if (checkPopup)
+            {
+                SoundManager.instance.playEffectFromPath(Globals.SOUND_VANGOGH.vangogh1);
+            }
+        }
     }
 
     void restartAfterPuzzle()
