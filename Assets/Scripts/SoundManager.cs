@@ -22,14 +22,30 @@ public class SoundManager : MonoBehaviour
     private void Awake()
     {
         SoundManager.instance = this;
+        InvokeRepeating("CheckBgMusic", 0f, 1.5f);
+    }
+
+    void CheckBgMusic()
+    {
+        bool checkBgMusic = true;
+        listCurrentAudioSrc.ForEach(auSrc =>
+        {
+            Debug.Log(auSrc);
+            if (auSrc.isPlaying)
+            {
+                checkBgMusic = false;
+            }
+        });
+        if (checkBgMusic && !audioMusic.isPlaying)
+            audioMusic.Play();
     }
 
     public AudioSource playEffectFromPath(string pathAudio)
     {
         if (isSound)
         {
-            audioMusic.Stop();
             var audioClip = Resources.Load(pathAudio) as AudioClip;
+            audioMusic.Pause();
             AudioSource audioSrc;
             if (listAudioSrc.Count > 0 && listAudioSrc[0].isPlaying == false)
             {
@@ -48,7 +64,6 @@ public class SoundManager : MonoBehaviour
             DOTween.Sequence()
               .AppendInterval(audioSrc.clip.length).AppendCallback(() =>
               {
-                  audioMusic.Play();
                   listAudioSrc.Add(audioSrc);
                   listCurrentAudioSrc.Remove(audioSrc);
               });

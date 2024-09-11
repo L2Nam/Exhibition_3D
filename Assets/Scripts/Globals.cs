@@ -8,6 +8,6 @@ public class Globals : MonoBehaviour
 
     public class SOUND_VANGOGH
     {
-        public const string vangogh1 = "Sounds/VanGogh/vangogh1";
+        public const string vangogh1 = "Sounds/vangogh1";
     }
 }

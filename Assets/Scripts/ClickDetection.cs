@@ -6,8 +6,11 @@ public class ClickDetection : MonoBehaviour
     public GameObject dot;
     public GameObject info;
     public GameObject camera;
+    public SoundManager soundManager;
     static public bool checkPuzzle = false;
     public bool checkPopup = true;
+    public bool checkSound = false;
+    string namePopup = "";
 
     private void Start()
     {
@@ -141,6 +144,8 @@ public class ClickDetection : MonoBehaviour
             if (checkPuzzle)
                 return;
             checkPopup = false;
+            namePopup = "";
+            soundManager.stopAllCurrentEffect();
             dot.SetActive(true);
             int childCount = info.transform.childCount;
             for (int i = 0; i < childCount; i++)
@@ -158,10 +163,33 @@ public class ClickDetection : MonoBehaviour
 
         if (Input.GetMouseButtonDown(2))
         {
-            if (checkPopup)
+            if (!checkPopup)
+                return;
+            if (!checkSound)
             {
-                SoundManager.instance.playEffectFromPath(Globals.SOUND_VANGOGH.vangogh1);
+                PlayAudioDescribe();
+                checkSound = true;
             }
+            else
+            {
+                soundManager.stopAllCurrentEffect();
+                checkSound = false;
+            }
+        }
+    }
+
+    void PlayAudioDescribe()
+    {
+        if (namePopup == "")
+            return;
+        string reff = "Sounds/" + namePopup;
+        try
+        {
+            SoundManager.instance.playEffectFromPath(reff);
+        }
+        catch
+        {
+            Debug.Log("Khong co audio: " + namePopup);
         }
     }
 
@@ -181,7 +209,6 @@ public class ClickDetection : MonoBehaviour
     }
 
     public void SetActivePopup(string name) {
-        Debug.Log("SetActivePopup =>>> " + name);
         if (name == "")
         {
             dot.SetActive(true);
@@ -200,6 +227,7 @@ public class ClickDetection : MonoBehaviour
         {
             Transform childTransform = info.transform.GetChild(i);
             if (childTransform.name == name && !checkPopup) {
+                namePopup = name;
                 checkPopup = true;
                 childTransform.gameObject.SetActive(true);
             }
