@@ -145,6 +145,7 @@ public class ClickDetection : MonoBehaviour
                 return;
             checkPopup = false;
             namePopup = "";
+            checkSound = false;
             soundManager.stopAllCurrentEffect();
             dot.SetActive(true);
             int childCount = info.transform.childCount;
