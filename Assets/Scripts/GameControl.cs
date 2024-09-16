@@ -1,15 +1,19 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
 
 public class GameControl : MonoBehaviour
 {
-    public GameObject puzzle;
-    public GameObject dot;
-    public GameObject info;
-    public GameObject camera;
-    public SoundManager soundManager;
+    [SerializeField] GameObject puzzle;
+    [SerializeField] GameObject dot;
+    [SerializeField] GameObject info;
+    [SerializeField] GameObject camera;
+    [SerializeField] SoundManager soundManager;
+    [SerializeField] TextMeshProUGUI textScore;
+
     static public bool checkPuzzle = false;
+    public static int playerScore = 0;
     public bool checkPopup = true;
     public bool checkSound = false;
     string namePopup = "";
@@ -128,7 +132,7 @@ public class GameControl : MonoBehaviour
                         SetActivePopup("skull");
                         break;
                     case "VangoghStatue":
-                        SetActivePopup("VanGoghStatue");
+                        SetActivePopup("VangoghStatue");
                         break;
                     //
                     case "playgame":
@@ -158,14 +162,13 @@ public class GameControl : MonoBehaviour
                 GameObject childObj = childTransform.gameObject;
                 if (childObj.activeSelf && childObj.tag == "popup")
                 {
-                    // N?u ?ang hi?n th?, ?óng popup
                     childObj.SetActive(false);
                     Cursor.lockState = CursorLockMode.Locked;
                 }
             }
         }
 
-        if (Input.GetMouseButtonDown(2))
+        if (Input.GetKeyDown(KeyCode.Space))
         {
             if (!checkPopup)
                 return;
@@ -204,6 +207,12 @@ public class GameControl : MonoBehaviour
             SetActivePopup("");
             checkPuzzle = false;
         }
+        if (PlayerPrefs.HasKey("scoreJigsaw"))
+        {
+            playerScore += PlayerPrefs.GetInt("scoreJigsaw");
+            textScore.text = "Score: " + playerScore.ToString();
+        }
+
     }
 
     void OnApplicationQuit()

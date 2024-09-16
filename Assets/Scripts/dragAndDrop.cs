@@ -121,6 +121,8 @@ public class dragAndDrop : MonoBehaviour
 
     void WinEffect()
     {
+        int score = 16;
+        PlayerPrefs.SetInt("scoreJigsaw", score);
         win.transform.SetAsLastSibling();
         win.transform.DOLocalJump(Vector2.zero, 2f, 4, 2f).OnComplete(() =>
         {
