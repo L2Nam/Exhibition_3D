@@ -55,7 +55,7 @@ public class PuzzleControl : MonoBehaviour
 
     public void OnClickClose()
     {
-        ClickDetection.checkPuzzle = false;
+        GameControl.checkPuzzle = false;
         choose_game.SetActive(true);
         choose_mode_jigsaw.SetActive(false);
         choose_painting.SetActive(false);

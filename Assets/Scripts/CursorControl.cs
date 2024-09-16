@@ -23,7 +23,7 @@ public class CursorControl : MonoBehaviour
     {
         Cursor.visible = !Cursor.visible;
         Cursor.lockState = (Cursor.lockState == CursorLockMode.Locked) ? CursorLockMode.None : CursorLockMode.Locked;
-        if (ClickDetection.checkPuzzle)
+        if (GameControl.checkPuzzle)
         {
             Cursor.visible = true;
             Cursor.lockState = CursorLockMode.None;
