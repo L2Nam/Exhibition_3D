@@ -11,16 +11,24 @@ public class GameControl : MonoBehaviour
     [SerializeField] GameObject camera;
     [SerializeField] SoundManager soundManager;
     [SerializeField] TextMeshProUGUI textScore;
+    [SerializeField] List<Light> listLightVanGogh = new List<Light>();
 
     static public bool checkPuzzle = false;
     public static int playerScore = 0;
     public bool checkPopup = true;
     public bool checkSound = false;
     string namePopup = "";
+    private int currentColorIndex = 0;
+    private Color[] colors = new Color[5];
 
     private void Start()
     {
         restartAfterPuzzle();
+        colors[0] = Color.blue;     
+        colors[1] = Color.green;
+        colors[2] = Color.red;
+        colors[3] = Color.yellow;
+        colors[4] = new Color(0.5f, 0f, 0.5f);
     }
 
     void Update()
@@ -142,6 +150,9 @@ public class GameControl : MonoBehaviour
                         Cursor.visible = true;
                         Cursor.lockState = CursorLockMode.None;
                         break;
+                    case "changelight":
+                        OnClickChangeLight();
+                        break;
                 }
             }
         }
@@ -192,7 +203,7 @@ public class GameControl : MonoBehaviour
         string reff = "Sounds/" + namePopup;
         try
         {
-            SoundManager.instance.playEffectFromPath(reff);
+            SoundManager.instance.PlayEffectFromPath(reff);
         }
         catch
         {
@@ -212,13 +223,21 @@ public class GameControl : MonoBehaviour
             playerScore += PlayerPrefs.GetInt("scoreJigsaw");
             textScore.text = "Score: " + playerScore.ToString();
         }
-
     }
 
     void OnApplicationQuit()
     {
         PlayerPrefs.DeleteAll();
         PlayerPrefs.Save();
+    }
+
+    public void OnClickChangeLight()
+    {
+        currentColorIndex = (currentColorIndex + 1) % colors.Length;
+        for (int i = 0; i < listLightVanGogh.Count; i++)
+        {
+            listLightVanGogh[i].color = colors[currentColorIndex];
+        }
     }
 
     public void SetActivePopup(string name)

@@ -34,17 +34,14 @@ public class CursorControl : MonoBehaviour
     {
         if (PlayerPrefs.HasKey("CameraPosX"))
         {
-            // Khôi ph?c v? trí
             float posX = PlayerPrefs.GetFloat("CameraPosX");
             float posY = PlayerPrefs.GetFloat("CameraPosY");
             float posZ = PlayerPrefs.GetFloat("CameraPosZ");
 
-            // Khôi ph?c góc quay
             float rotX = PlayerPrefs.GetFloat("CameraRotX");
             float rotY = PlayerPrefs.GetFloat("CameraRotY");
             float rotZ = PlayerPrefs.GetFloat("CameraRotZ");
 
-            // Gán l?i v? trí và góc quay cho camera
             transform.position = new Vector3(posX, posY, posZ);
             transform.eulerAngles = new Vector3(rotX, rotY, rotZ);
         }

@@ -6,7 +6,7 @@ using DG.Tweening;
 public class SoundManager : MonoBehaviour
 {
     [SerializeField]
-    AudioSource audioMusic, audioEffect;
+    AudioSource audioBackgrond, audioEffect;
 
     public static SoundManager instance;
 
@@ -36,16 +36,16 @@ public class SoundManager : MonoBehaviour
                 checkBgMusic = false;
             }
         });
-        if (checkBgMusic && !audioMusic.isPlaying)
-            audioMusic.Play();
+        if (checkBgMusic && !audioBackgrond.isPlaying)
+            audioBackgrond.Play();
     }
 
-    public AudioSource playEffectFromPath(string pathAudio)
+    public AudioSource PlayEffectFromPath(string pathAudio)
     {
         if (isSound)
         {
             var audioClip = Resources.Load(pathAudio) as AudioClip;
-            audioMusic.Pause();
+            audioBackgrond.Pause();
             AudioSource audioSrc;
             if (listAudioSrc.Count > 0 && listAudioSrc[0].isPlaying == false)
             {
