@@ -98,7 +98,7 @@ public class PuzzleControl : MonoBehaviour
         else
         {
             Debug.LogError("puzzle4x4");
-            SceneManager.LoadScene("puzzle");
+            SceneManager.LoadScene("puzzle4x4");
         }
     }
 }
