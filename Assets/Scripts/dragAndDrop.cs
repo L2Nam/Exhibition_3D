@@ -30,6 +30,7 @@ public class dragAndDrop : MonoBehaviour
     bool movable = true;
 
     int clickCount;
+    int level;
 
     string pattern = @"\d+";
 
@@ -44,6 +45,7 @@ public class dragAndDrop : MonoBehaviour
         originalPos = transform.position;
         objectName = gameObject.name;
         inside = false;
+        level = PuzzleControl.mode * PuzzleControl.mode;
     }
 
 
@@ -104,7 +106,7 @@ public class dragAndDrop : MonoBehaviour
                 movable = false;
                 Board.GetComponent<puzzleBoard>().PiecesInPlace++;
                 Debug.Log("correct pieces" + Board.GetComponent<puzzleBoard>().PiecesInPlace);
-                if (Board.GetComponent<puzzleBoard>().PiecesInPlace == 16)
+                if (Board.GetComponent<puzzleBoard>().PiecesInPlace == level)
                 {
                     Timer.GetComponent<Timer>().active = false;
                     Debug.Log("over");

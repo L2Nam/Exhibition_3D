@@ -16,6 +16,7 @@ public class PuzzleControl : MonoBehaviour
     [SerializeField] GameObject choose_mode_jigsaw;
     [SerializeField] GameObject choose_painting;
 
+    public static int mode = 0;
 
     private void Awake()
     {
@@ -72,16 +73,32 @@ public class PuzzleControl : MonoBehaviour
         choose_painting.SetActive(false);
     }
 
-    public void OnClickJigsawMode()
+    public void OnClickJigsawMode(int _mode)
     {
         choose_game.SetActive(false);
         choose_mode_jigsaw.SetActive(false);
         choose_painting.SetActive(true);
+        mode = _mode;
     }
 
     public void OnClickPainting()
     {
+        Debug.LogError("mode = " + mode);
         SaveCameraPosition();
-        SceneManager.LoadScene("puzzle");
+        if (mode == 3)
+        {
+            Debug.LogError("puzzle3x3");
+            SceneManager.LoadScene("puzzle3x3");
+        }
+        else if (mode == 5)
+        {
+            Debug.LogError("puzzle5x5");
+            SceneManager.LoadScene("puzzle5x5");
+        }
+        else
+        {
+            Debug.LogError("puzzle4x4");
+            SceneManager.LoadScene("puzzle");
+        }
     }
 }
