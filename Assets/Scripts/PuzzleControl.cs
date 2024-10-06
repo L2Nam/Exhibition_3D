@@ -83,21 +83,17 @@ public class PuzzleControl : MonoBehaviour
 
     public void OnClickPainting()
     {
-        Debug.LogError("mode = " + mode);
         SaveCameraPosition();
         if (mode == 3)
         {
-            Debug.LogError("puzzle3x3");
             SceneManager.LoadScene("puzzle3x3");
         }
         else if (mode == 5)
         {
-            Debug.LogError("puzzle5x5");
             SceneManager.LoadScene("puzzle5x5");
         }
         else
         {
-            Debug.LogError("puzzle4x4");
             SceneManager.LoadScene("puzzle4x4");
         }
     }

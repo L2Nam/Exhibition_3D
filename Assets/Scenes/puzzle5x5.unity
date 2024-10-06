@@ -478,6 +478,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   timerText: {fileID: 107232155}
+  timer: 0
   active: 0
 --- !u!1 &180123199
 GameObject:
@@ -682,9 +683,7 @@ MonoBehaviour:
   Board: {fileID: 1813142713824160348}
   gameOver: {fileID: 1460820730}
   Timer: {fileID: 107232155}
-  win: {fileID: 1380736910}
-  textComplete: {fileID: 942425000}
-  btnManager: {fileID: 373801334}
+  jgControl: {fileID: 1688357028}
 --- !u!54 &268702688
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -749,9 +748,7 @@ MonoBehaviour:
   Board: {fileID: 1813142713824160348}
   gameOver: {fileID: 1460820730}
   Timer: {fileID: 107232155}
-  win: {fileID: 1380736910}
-  textComplete: {fileID: 942425000}
-  btnManager: {fileID: 373801334}
+  jgControl: {fileID: 1688357028}
 --- !u!54 &293586874
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -1164,9 +1161,7 @@ MonoBehaviour:
   Board: {fileID: 1813142713824160348}
   gameOver: {fileID: 1460820730}
   Timer: {fileID: 107232155}
-  win: {fileID: 1380736910}
-  textComplete: {fileID: 942425000}
-  btnManager: {fileID: 373801334}
+  jgControl: {fileID: 1688357028}
 --- !u!54 &366035151
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -1510,9 +1505,7 @@ MonoBehaviour:
   Board: {fileID: 1813142713824160348}
   gameOver: {fileID: 1460820730}
   Timer: {fileID: 107232155}
-  win: {fileID: 1380736910}
-  textComplete: {fileID: 942425000}
-  btnManager: {fileID: 373801334}
+  jgControl: {fileID: 1688357028}
 --- !u!54 &427515914
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -1630,9 +1623,7 @@ MonoBehaviour:
   Board: {fileID: 1813142713824160348}
   gameOver: {fileID: 1460820730}
   Timer: {fileID: 107232155}
-  win: {fileID: 1380736910}
-  textComplete: {fileID: 942425000}
-  btnManager: {fileID: 373801334}
+  jgControl: {fileID: 1688357028}
 --- !u!54 &457151917
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -1786,9 +1777,7 @@ MonoBehaviour:
   Board: {fileID: 1813142713824160348}
   gameOver: {fileID: 1460820730}
   Timer: {fileID: 107232155}
-  win: {fileID: 1380736910}
-  textComplete: {fileID: 942425000}
-  btnManager: {fileID: 373801334}
+  jgControl: {fileID: 1688357028}
 --- !u!54 &514515932
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -2506,9 +2495,7 @@ MonoBehaviour:
   Board: {fileID: 1813142713824160348}
   gameOver: {fileID: 1460820730}
   Timer: {fileID: 107232155}
-  win: {fileID: 1380736910}
-  textComplete: {fileID: 942425000}
-  btnManager: {fileID: 373801334}
+  jgControl: {fileID: 1688357028}
 --- !u!54 &722855918
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -2609,9 +2596,7 @@ MonoBehaviour:
   Board: {fileID: 1813142713824160348}
   gameOver: {fileID: 1460820730}
   Timer: {fileID: 107232155}
-  win: {fileID: 1380736910}
-  textComplete: {fileID: 942425000}
-  btnManager: {fileID: 373801334}
+  jgControl: {fileID: 1688357028}
 --- !u!54 &742079676
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -2726,9 +2711,7 @@ MonoBehaviour:
   Board: {fileID: 1813142713824160348}
   gameOver: {fileID: 1460820730}
   Timer: {fileID: 107232155}
-  win: {fileID: 1380736910}
-  textComplete: {fileID: 942425000}
-  btnManager: {fileID: 373801334}
+  jgControl: {fileID: 1688357028}
 --- !u!54 &772730280
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -2793,9 +2776,7 @@ MonoBehaviour:
   Board: {fileID: 1813142713824160348}
   gameOver: {fileID: 1460820730}
   Timer: {fileID: 107232155}
-  win: {fileID: 1380736910}
-  textComplete: {fileID: 942425000}
-  btnManager: {fileID: 373801334}
+  jgControl: {fileID: 1688357028}
 --- !u!54 &791686546
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -2860,9 +2841,7 @@ MonoBehaviour:
   Board: {fileID: 1813142713824160348}
   gameOver: {fileID: 1460820730}
   Timer: {fileID: 107232155}
-  win: {fileID: 1380736910}
-  textComplete: {fileID: 942425000}
-  btnManager: {fileID: 373801334}
+  jgControl: {fileID: 1688357028}
 --- !u!54 &827764459
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -3150,9 +3129,7 @@ MonoBehaviour:
   Board: {fileID: 1813142713824160348}
   gameOver: {fileID: 1460820730}
   Timer: {fileID: 107232155}
-  win: {fileID: 1380736910}
-  textComplete: {fileID: 942425000}
-  btnManager: {fileID: 373801334}
+  jgControl: {fileID: 1688357028}
 --- !u!54 &863795356
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -3303,9 +3280,7 @@ MonoBehaviour:
   Board: {fileID: 1813142713824160348}
   gameOver: {fileID: 1460820730}
   Timer: {fileID: 107232155}
-  win: {fileID: 1380736910}
-  textComplete: {fileID: 942425000}
-  btnManager: {fileID: 373801334}
+  jgControl: {fileID: 1688357028}
 --- !u!54 &893408513
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -3736,9 +3711,7 @@ MonoBehaviour:
   Board: {fileID: 1813142713824160348}
   gameOver: {fileID: 1460820730}
   Timer: {fileID: 107232155}
-  win: {fileID: 1380736910}
-  textComplete: {fileID: 942425000}
-  btnManager: {fileID: 373801334}
+  jgControl: {fileID: 1688357028}
 --- !u!54 &966249330
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -3853,9 +3826,7 @@ MonoBehaviour:
   Board: {fileID: 1813142713824160348}
   gameOver: {fileID: 1460820730}
   Timer: {fileID: 107232155}
-  win: {fileID: 1380736910}
-  textComplete: {fileID: 942425000}
-  btnManager: {fileID: 373801334}
+  jgControl: {fileID: 1688357028}
 --- !u!54 &982825592
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -3973,9 +3944,7 @@ MonoBehaviour:
   Board: {fileID: 1813142713824160348}
   gameOver: {fileID: 1460820730}
   Timer: {fileID: 107232155}
-  win: {fileID: 1380736910}
-  textComplete: {fileID: 942425000}
-  btnManager: {fileID: 373801334}
+  jgControl: {fileID: 1688357028}
 --- !u!54 &992168879
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -4530,9 +4499,7 @@ MonoBehaviour:
   Board: {fileID: 1813142713824160348}
   gameOver: {fileID: 1460820730}
   Timer: {fileID: 107232155}
-  win: {fileID: 1380736910}
-  textComplete: {fileID: 942425000}
-  btnManager: {fileID: 373801334}
+  jgControl: {fileID: 1688357028}
 --- !u!54 &1220669285
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -4767,9 +4734,7 @@ MonoBehaviour:
   Board: {fileID: 1813142713824160348}
   gameOver: {fileID: 1460820730}
   Timer: {fileID: 107232155}
-  win: {fileID: 1380736910}
-  textComplete: {fileID: 942425000}
-  btnManager: {fileID: 373801334}
+  jgControl: {fileID: 1688357028}
 --- !u!54 &1321398827
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -6089,6 +6054,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   popup_confirm: {fileID: 1536842}
+  win: {fileID: 1380736910}
+  textComplete: {fileID: 942425000}
+  btnManager: {fileID: 373801334}
+  time: {fileID: 107232157}
 --- !u!1 &1710281567
 GameObject:
   m_ObjectHideFlags: 0
@@ -6158,9 +6127,7 @@ MonoBehaviour:
   Board: {fileID: 1813142713824160348}
   gameOver: {fileID: 1460820730}
   Timer: {fileID: 107232155}
-  win: {fileID: 1380736910}
-  textComplete: {fileID: 942425000}
-  btnManager: {fileID: 373801334}
+  jgControl: {fileID: 1688357028}
 --- !u!54 &1763616713
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -6314,9 +6281,7 @@ MonoBehaviour:
   Board: {fileID: 1813142713824160348}
   gameOver: {fileID: 1460820730}
   Timer: {fileID: 107232155}
-  win: {fileID: 1380736910}
-  textComplete: {fileID: 942425000}
-  btnManager: {fileID: 373801334}
+  jgControl: {fileID: 1688357028}
 --- !u!54 &1795279428
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -6467,9 +6432,7 @@ MonoBehaviour:
   Board: {fileID: 1813142713824160348}
   gameOver: {fileID: 1460820730}
   Timer: {fileID: 107232155}
-  win: {fileID: 1380736910}
-  textComplete: {fileID: 942425000}
-  btnManager: {fileID: 373801334}
+  jgControl: {fileID: 1688357028}
 --- !u!54 &1825224960
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -6637,9 +6600,7 @@ MonoBehaviour:
   Board: {fileID: 1813142713824160348}
   gameOver: {fileID: 1460820730}
   Timer: {fileID: 107232155}
-  win: {fileID: 1380736910}
-  textComplete: {fileID: 942425000}
-  btnManager: {fileID: 373801334}
+  jgControl: {fileID: 1688357028}
 --- !u!54 &1985371875
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -6704,9 +6665,7 @@ MonoBehaviour:
   Board: {fileID: 1813142713824160348}
   gameOver: {fileID: 1460820730}
   Timer: {fileID: 107232155}
-  win: {fileID: 1380736910}
-  textComplete: {fileID: 942425000}
-  btnManager: {fileID: 373801334}
+  jgControl: {fileID: 1688357028}
 --- !u!54 &1988791820
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -6913,9 +6872,7 @@ MonoBehaviour:
   Board: {fileID: 1813142713824160348}
   gameOver: {fileID: 1460820730}
   Timer: {fileID: 107232155}
-  win: {fileID: 1380736910}
-  textComplete: {fileID: 942425000}
-  btnManager: {fileID: 373801334}
+  jgControl: {fileID: 1688357028}
 --- !u!54 &2030158972
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -7136,9 +7093,7 @@ MonoBehaviour:
   Board: {fileID: 1813142713824160348}
   gameOver: {fileID: 1460820730}
   Timer: {fileID: 107232155}
-  win: {fileID: 1380736910}
-  textComplete: {fileID: 942425000}
-  btnManager: {fileID: 373801334}
+  jgControl: {fileID: 1688357028}
 --- !u!54 &2139705770
 Rigidbody:
   m_ObjectHideFlags: 0

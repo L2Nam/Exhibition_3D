@@ -25,7 +25,6 @@ public class OrgPuzzle : MonoBehaviour
         });
     }
 
-    // Update is called once per frame
     void Update()
     {
         Timer = Timer - Time.deltaTime;

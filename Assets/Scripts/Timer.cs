@@ -6,7 +6,7 @@ using TMPro;
 public class Timer : MonoBehaviour
 {
     public TextMeshProUGUI timerText;
-    private float timer = 0;
+    public float timer = 0;
     public bool active;
 
     void Start()

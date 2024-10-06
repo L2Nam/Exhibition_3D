@@ -218,11 +218,7 @@ public class GameControl : MonoBehaviour
             SetActivePopup("");
             checkPuzzle = false;
         }
-        if (PlayerPrefs.HasKey("scoreJigsaw"))
-        {
-            playerScore += PlayerPrefs.GetInt("scoreJigsaw");
-            textScore.text = "Score: " + playerScore.ToString();
-        }
+        textScore.text = "Score: " + playerScore.ToString();
     }
 
     void OnApplicationQuit()
