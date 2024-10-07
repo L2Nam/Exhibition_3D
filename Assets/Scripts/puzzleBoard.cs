@@ -15,6 +15,13 @@ public class puzzleBoard : MonoBehaviour
 
     private void Start()
     {
-        mat.mainTexture = imgs[Random.Range(0, 5)];
+        if (PuzzleControl.paiting == -1)
+        {
+            mat.mainTexture = imgs[Random.Range(0, imgs.Count)];
+        }
+        else
+        {
+            mat.mainTexture = imgs[PuzzleControl.paiting];
+        }
     }
 }

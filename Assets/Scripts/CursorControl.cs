@@ -30,6 +30,13 @@ public class CursorControl : MonoBehaviour
         }
     }
 
+        void OnApplicationQuit()
+    {
+        PlayerPrefs.DeleteAll();
+        PlayerPrefs.Save();
+        Debug.Log("OnApplicationQuit");
+    }
+
     void RestoreCameraPosition()
     {
         if (PlayerPrefs.HasKey("CameraPosX"))

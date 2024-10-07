@@ -17,6 +17,7 @@ public class PuzzleControl : MonoBehaviour
     [SerializeField] GameObject choose_painting;
 
     public static int mode = 0;
+    public static int paiting = -1;
 
     private void Awake()
     {
@@ -81,8 +82,9 @@ public class PuzzleControl : MonoBehaviour
         mode = _mode;
     }
 
-    public void OnClickPainting()
+    public void OnClickPainting(int _painting)
     {
+        paiting = _painting;
         SaveCameraPosition();
         if (mode == 3)
         {

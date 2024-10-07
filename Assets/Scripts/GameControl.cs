@@ -225,6 +225,7 @@ public class GameControl : MonoBehaviour
     {
         PlayerPrefs.DeleteAll();
         PlayerPrefs.Save();
+        Debug.Log("OnApplicationQuit");
     }
 
     public void OnClickChangeLight()
