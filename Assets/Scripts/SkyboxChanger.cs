@@ -13,7 +13,7 @@ public class SkyboxChanger : MonoBehaviour
         if (skyboxMaterials.Count > 0)
         {
             RenderSettings.skybox = skyboxMaterials[currentSkyboxIndex];
-            InvokeRepeating("ChangeSkybox", 18f, 18f);
+            InvokeRepeating("ChangeSkybox", 15f, 15f);
         }
         else
         {
