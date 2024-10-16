@@ -142,6 +142,15 @@ public class GameControl : MonoBehaviour
                     case "VangoghStatue":
                         SetActivePopup("VangoghStatue");
                         break;
+                    case "TheLastSupper":
+                        SetActivePopup("TheLastSupper");
+                        break;
+                    case "LeonardoStatue":
+                        SetActivePopup("LeonardoStatue");
+                        break;
+                    case "MonaLisa":
+                        SetActivePopup("MonaLisa");
+                        break;
                     //
                     case "playgame":
                         puzzle.SetActive(true);
