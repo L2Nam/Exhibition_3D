@@ -47,121 +47,65 @@ public class GameControl : MonoBehaviour
                 float distance = Vector3.Distance(camera.transform.position, hit.point);
                 if (distance > 10 || checkPuzzle)
                     return;
-                switch (obj.tag)
+                if (obj.layer == 6) // information
                 {
-                    case "forest":
-                        SetActivePopup("forest");
-                        break;
-                    case "house":
-                        SetActivePopup("house");
-                        break;
-                    case "blue":
-                        SetActivePopup("blue");
-                        break;
-                    case "sunset":
-                        SetActivePopup("sunset");
-                        break;
-                    case "redleaves":
-                        SetActivePopup("redleaves");
-                        break;
-                    case "sheep":
-                        SetActivePopup("sheep");
-                        break;
-                    case "elephant":
-                        SetActivePopup("elephant");
-                        break;
-                    case "bear":
-                        SetActivePopup("bear");
-                        break;
-                    case "human":
-                        SetActivePopup("human");
-                        break;
-                    case "hourse":
-                        SetActivePopup("hourse");
-                        break;
-                    case "lion":
-                        SetActivePopup("lion");
-                        break;
-                    case "dog":
-                        SetActivePopup("dog");
-                        break;
-                    case "cat":
-                        SetActivePopup("cat");
-                        break;
-                    case "vangogh1":
-                        SetActivePopup("vangogh1");
-                        break;
-                    case "vangogh2":
-                        SetActivePopup("vangogh2");
-                        break;
-                    case "cafenight":
-                        SetActivePopup("cafenight");
-                        break;
-                    case "starrynight":
-                        SetActivePopup("starrynight");
-                        break;
-                    case "rohne":
-                        SetActivePopup("rohne");
-                        break;
-                    case "irises":
-                        SetActivePopup("irises");
-                        break;
-                    case "etten":
-                        SetActivePopup("etten");
-                        break;
-                    case "mama":
-                        SetActivePopup("mama");
-                        break;
-                    case "sunflower":
-                        SetActivePopup("sunflower");
-                        break;
-                    case "olive":
-                        SetActivePopup("olive");
-                        break;
-                    case "oldman":
-                        SetActivePopup("oldman");
-                        break;
-                    case "doctor":
-                        SetActivePopup("doctor");
-                        break;
-                    case "tranhdongho":
-                        SetActivePopup("tranhdongho");
-                        break;
-                    case "redvineyard":
-                        SetActivePopup("redVineyard");
-                        break;
-                    case "floweringgarden":
-                        SetActivePopup("floweringgarden");
-                        break;
-                    case "almond":
-                        SetActivePopup("almond");
-                        break;
-                    case "skull":
-                        SetActivePopup("skull");
-                        break;
-                    case "VangoghStatue":
-                        SetActivePopup("VangoghStatue");
-                        break;
-                    case "TheLastSupper":
-                        SetActivePopup("TheLastSupper");
-                        break;
-                    case "LeonardoStatue":
-                        SetActivePopup("LeonardoStatue");
-                        break;
-                    case "MonaLisa":
-                        SetActivePopup("MonaLisa");
-                        break;
-                    //
-                    case "playgame":
-                        puzzle.SetActive(true);
-                        checkPuzzle = true;
-                        dot.SetActive(false);
-                        Cursor.visible = true;
-                        Cursor.lockState = CursorLockMode.None;
-                        break;
-                    case "changelight":
-                        OnClickChangeLight();
-                        break;
+                    Debug.Log("show information");
+                    SetActivePopup(obj.tag);
+                }
+                else
+                {
+                    switch (obj.tag)
+                    {
+                        case "forest":
+                            SetActivePopup("forest");
+                            break;
+                        case "house":
+                            SetActivePopup("house");
+                            break;
+                        case "blue":
+                            SetActivePopup("blue");
+                            break;
+                        case "sunset":
+                            SetActivePopup("sunset");
+                            break;
+                        case "redleaves":
+                            SetActivePopup("redleaves");
+                            break;
+                        case "sheep":
+                            SetActivePopup("sheep");
+                            break;
+                        case "elephant":
+                            SetActivePopup("elephant");
+                            break;
+                        case "bear":
+                            SetActivePopup("bear");
+                            break;
+                        case "human":
+                            SetActivePopup("human");
+                            break;
+                        case "hourse":
+                            SetActivePopup("hourse");
+                            break;
+                        case "lion":
+                            SetActivePopup("lion");
+                            break;
+                        case "dog":
+                            SetActivePopup("dog");
+                            break;
+                        case "cat":
+                            SetActivePopup("cat");
+                            break;
+                        case "playgame":
+                            puzzle.SetActive(true);
+                            checkPuzzle = true;
+                            dot.SetActive(false);
+                            Cursor.visible = true;
+                            Cursor.lockState = CursorLockMode.None;
+                            break;
+                        case "changelight":
+                            OnClickChangeLight();
+                            break;
+                    }
                 }
             }
         }
