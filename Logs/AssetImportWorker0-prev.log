@@ -15,7 +15,7 @@ E:/IT problems/Exhibition
 -logFile
 Logs/AssetImportWorker0.log
 -srvPort
-49829
+58484
 Successfully changed project path to: E:/IT problems/Exhibition
 E:/IT problems/Exhibition
 [UnityMemory] Configuration Parameters - Can be set up in boot.config
@@ -49,12 +49,12 @@ E:/IT problems/Exhibition
     "memorysetup-temp-allocator-size-cloud-worker=32768"
     "memorysetup-temp-allocator-size-gi-baking-worker=262144"
     "memorysetup-temp-allocator-size-gfx=262144"
-Player connection [17784] Host "[IP] 192.168.1.7 [Port] 0 [Flags] 2 [Guid] 3964614063 [EditorId] 3964614063 [Version] 1048832 [Id] WindowsEditor(7,DESKTOP-IPBE85D) [Debug] 1 [PackageName] WindowsEditor [ProjectName] Editor" joined multi-casting on [225.0.0.222:54997]...
+Player connection [4716] Host "[IP] 192.168.1.8 [Port] 0 [Flags] 2 [Guid] 2687768078 [EditorId] 2687768078 [Version] 1048832 [Id] WindowsEditor(7,DESKTOP-IPBE85D) [Debug] 1 [PackageName] WindowsEditor [ProjectName] Editor" joined multi-casting on [225.0.0.222:54997]...
 
-Player connection [17784] Host "[IP] 192.168.1.7 [Port] 0 [Flags] 2 [Guid] 3964614063 [EditorId] 3964614063 [Version] 1048832 [Id] WindowsEditor(7,DESKTOP-IPBE85D) [Debug] 1 [PackageName] WindowsEditor [ProjectName] Editor" joined alternative multi-casting on [225.0.0.222:34997]...
+Player connection [4716] Host "[IP] 192.168.1.8 [Port] 0 [Flags] 2 [Guid] 2687768078 [EditorId] 2687768078 [Version] 1048832 [Id] WindowsEditor(7,DESKTOP-IPBE85D) [Debug] 1 [PackageName] WindowsEditor [ProjectName] Editor" joined alternative multi-casting on [225.0.0.222:34997]...
 
 [Physics::Module] Initialized MultithreadedJobDispatcher with 7 workers.
-Refreshing native plugins compatible for Editor in 2209.21 ms, found 3 plugins.
+Refreshing native plugins compatible for Editor in 6.42 ms, found 3 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Initialize engine version: 2022.3.14f1 (eff2de9070d8)
 [Subsystems] Discovering subsystems at path D:/Workspace/2022.3.14f1/Editor/Data/Resources/UnitySubsystems
@@ -70,47 +70,47 @@ Initialize mono
 Mono path[0] = 'D:/Workspace/2022.3.14f1/Editor/Data/Managed'
 Mono path[1] = 'D:/Workspace/2022.3.14f1/Editor/Data/MonoBleedingEdge/lib/mono/unityjit-win32'
 Mono config path = 'D:/Workspace/2022.3.14f1/Editor/Data/MonoBleedingEdge/etc'
-Using monoOptions --debugger-agent=transport=dt_socket,embedding=1,server=y,suspend=n,address=127.0.0.1:56700
+Using monoOptions --debugger-agent=transport=dt_socket,embedding=1,server=y,suspend=n,address=127.0.0.1:56144
 Begin MonoManager ReloadAssembly
 Registering precompiled unity dll's ...
 Register platform support module: D:/Workspace/2022.3.14f1/Editor/Data/PlaybackEngines/AndroidPlayer/UnityEditor.Android.Extensions.dll
 Register platform support module: D:/Workspace/2022.3.14f1/Editor/Data/PlaybackEngines/WindowsStandaloneSupport/UnityEditor.WindowsStandalone.Extensions.dll
-Registered in 0.458045 seconds.
-- Loaded All Assemblies, in  8.362 seconds
+Registered in 0.005971 seconds.
+- Loaded All Assemblies, in  0.412 seconds
 Native extension for WindowsStandalone target not found
 Native extension for Android target not found
-Android Extension - Scanning For ADB Devices 309 ms
+Android Extension - Scanning For ADB Devices 320 ms
 Mono: successfully reloaded assembly
-- Finished resetting the current domain, in  0.819 seconds
-Domain Reload Profiling: 9181ms
-	BeginReloadAssembly (5744ms)
+- Finished resetting the current domain, in  0.770 seconds
+Domain Reload Profiling: 1182ms
+	BeginReloadAssembly (124ms)
 		ExecutionOrderSort (0ms)
 		DisableScriptedObjects (0ms)
 		BackupInstance (0ms)
 		ReleaseScriptingObjects (0ms)
 		CreateAndSetChildDomain (1ms)
-	RebuildCommonClasses (557ms)
+	RebuildCommonClasses (38ms)
 	RebuildNativeTypeToScriptingClass (13ms)
-	initialDomainReloadingComplete (518ms)
-	LoadAllAssembliesAndSetupDomain (1529ms)
-		LoadAssemblies (5744ms)
+	initialDomainReloadingComplete (64ms)
+	LoadAllAssembliesAndSetupDomain (172ms)
+		LoadAssemblies (124ms)
 		RebuildTransferFunctionScriptingTraits (0ms)
-		AnalyzeDomain (1527ms)
-			TypeCache.Refresh (1525ms)
-				TypeCache.ScanAssembly (1244ms)
-			ScanForSourceGeneratedMonoScriptInfo (0ms)
-			ResolveRequiredComponents (0ms)
-	FinalizeReload (819ms)
+		AnalyzeDomain (170ms)
+			TypeCache.Refresh (167ms)
+				TypeCache.ScanAssembly (152ms)
+			ScanForSourceGeneratedMonoScriptInfo (1ms)
+			ResolveRequiredComponents (1ms)
+	FinalizeReload (770ms)
 		ReleaseScriptCaches (0ms)
 		RebuildScriptCaches (0ms)
-		SetupLoadedEditorAssemblies (733ms)
+		SetupLoadedEditorAssemblies (654ms)
 			LogAssemblyErrors (0ms)
-			InitializePlatformSupportModulesInManaged (558ms)
-			SetLoadedEditorAssemblies (4ms)
+			InitializePlatformSupportModulesInManaged (452ms)
+			SetLoadedEditorAssemblies (5ms)
 			RefreshPlugins (0ms)
 			BeforeProcessingInitializeOnLoad (3ms)
-			ProcessInitializeOnLoadAttributes (111ms)
-			ProcessInitializeOnLoadMethodAttributes (57ms)
+			ProcessInitializeOnLoadAttributes (134ms)
+			ProcessInitializeOnLoadMethodAttributes (60ms)
 			AfterProcessingInitializeOnLoad (0ms)
 			EditorAssembliesLoaded (0ms)
 		ExecutionOrderSort2 (0ms)
@@ -118,8 +118,8 @@ Domain Reload Profiling: 9181ms
 ========================================================================
 Worker process is ready to serve import requests
 Begin MonoManager ReloadAssembly
-- Loaded All Assemblies, in  9.035 seconds
-Refreshing native plugins compatible for Editor in 2.53 ms, found 3 plugins.
+- Loaded All Assemblies, in  0.881 seconds
+Refreshing native plugins compatible for Editor in 2.44 ms, found 3 plugins.
 Native extension for WindowsStandalone target not found
 Native extension for Android target not found
 Package Manager log level set to [2]
@@ -127,47 +127,47 @@ Package Manager log level set to [2]
 [Package Manager] UpmClient::Send -- Unable to send message (not connected to UPM process).
 [Package Manager] Cannot connect to Unity Package Manager local server
 Mono: successfully reloaded assembly
-- Finished resetting the current domain, in  0.921 seconds
-Domain Reload Profiling: 9956ms
-	BeginReloadAssembly (238ms)
+- Finished resetting the current domain, in  0.725 seconds
+Domain Reload Profiling: 1606ms
+	BeginReloadAssembly (237ms)
 		ExecutionOrderSort (0ms)
-		DisableScriptedObjects (7ms)
+		DisableScriptedObjects (6ms)
 		BackupInstance (0ms)
 		ReleaseScriptingObjects (0ms)
-		CreateAndSetChildDomain (39ms)
-	RebuildCommonClasses (45ms)
-	RebuildNativeTypeToScriptingClass (18ms)
-	initialDomainReloadingComplete (57ms)
-	LoadAllAssembliesAndSetupDomain (8675ms)
-		LoadAssemblies (7914ms)
+		CreateAndSetChildDomain (28ms)
+	RebuildCommonClasses (40ms)
+	RebuildNativeTypeToScriptingClass (12ms)
+	initialDomainReloadingComplete (53ms)
+	LoadAllAssembliesAndSetupDomain (539ms)
+		LoadAssemblies (383ms)
 		RebuildTransferFunctionScriptingTraits (0ms)
-		AnalyzeDomain (878ms)
-			TypeCache.Refresh (848ms)
-				TypeCache.ScanAssembly (767ms)
-			ScanForSourceGeneratedMonoScriptInfo (22ms)
-			ResolveRequiredComponents (6ms)
-	FinalizeReload (922ms)
+		AnalyzeDomain (246ms)
+			TypeCache.Refresh (220ms)
+				TypeCache.ScanAssembly (203ms)
+			ScanForSourceGeneratedMonoScriptInfo (19ms)
+			ResolveRequiredComponents (5ms)
+	FinalizeReload (725ms)
 		ReleaseScriptCaches (0ms)
 		RebuildScriptCaches (0ms)
-		SetupLoadedEditorAssemblies (672ms)
+		SetupLoadedEditorAssemblies (523ms)
 			LogAssemblyErrors (0ms)
-			InitializePlatformSupportModulesInManaged (44ms)
-			SetLoadedEditorAssemblies (7ms)
+			InitializePlatformSupportModulesInManaged (25ms)
+			SetLoadedEditorAssemblies (5ms)
 			RefreshPlugins (0ms)
-			BeforeProcessingInitializeOnLoad (85ms)
-			ProcessInitializeOnLoadAttributes (496ms)
-			ProcessInitializeOnLoadMethodAttributes (37ms)
-			AfterProcessingInitializeOnLoad (3ms)
+			BeforeProcessingInitializeOnLoad (69ms)
+			ProcessInitializeOnLoadAttributes (392ms)
+			ProcessInitializeOnLoadMethodAttributes (30ms)
+			AfterProcessingInitializeOnLoad (2ms)
 			EditorAssembliesLoaded (0ms)
 		ExecutionOrderSort2 (0ms)
-		AwakeInstancesAfterBackupRestoration (12ms)
-Launched and connected shader compiler UnityShaderCompiler.exe after 0.09 seconds
-Refreshing native plugins compatible for Editor in 2.87 ms, found 3 plugins.
+		AwakeInstancesAfterBackupRestoration (10ms)
+Launched and connected shader compiler UnityShaderCompiler.exe after 0.05 seconds
+Refreshing native plugins compatible for Editor in 2.59 ms, found 3 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Unloading 3534 Unused Serialized files (Serialized files now loaded: 0)
 Unloading 52 unused Assets / (1.2 MB). Loaded Objects now: 4004.
-Memory consumption went from 151.8 MB to 150.6 MB.
-Total: 3.677500 ms (FindLiveObjects: 0.298600 ms CreateObjectMapping: 0.132000 ms MarkObjects: 2.609200 ms  DeleteObjects: 0.636300 ms)
+Memory consumption went from 151.7 MB to 150.5 MB.
+Total: 3.748800 ms (FindLiveObjects: 0.272500 ms CreateObjectMapping: 0.114400 ms MarkObjects: 2.682500 ms  DeleteObjects: 0.677800 ms)
 
 AssetImportParameters requested are different than current active one (requested -> active):
   custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
@@ -185,63 +185,215 @@ AssetImportParameters requested are different than current active one (requested
   custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
 ========================================================================
 Received Import Request.
-  Time since last request: 1120.616453 seconds.
+  Time since last request: 21566.742359 seconds.
+  path: Assets/3Dfrk/Frames with pictures/Textures/VanGogh
+  artifactKey: Guid(fd079223e93993d4b9ca73f5ea840c20) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/3Dfrk/Frames with pictures/Textures/VanGogh using Guid(fd079223e93993d4b9ca73f5ea840c20) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '60b1620bebc871fa69de53b4c25ae997') in 0.003614 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 0
+========================================================================
+Received Import Request.
+  Time since last request: 19.188343 seconds.
+  path: Assets/3Dfrk/Frames with pictures/Textures/WorldFamous
+  artifactKey: Guid(5dfd021cb052acc468c799bfdc28e0f8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/3Dfrk/Frames with pictures/Textures/WorldFamous using Guid(5dfd021cb052acc468c799bfdc28e0f8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'aeec6ba57c689e667a90446246b09d95') in 0.000636 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 0
+========================================================================
+Received Import Request.
+  Time since last request: 30.043936 seconds.
+  path: Assets/Sprite/JSWorldFamous
+  artifactKey: Guid(bbffc8f509c4e044a85bb36e4992c6d5) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Sprite/JSWorldFamous using Guid(bbffc8f509c4e044a85bb36e4992c6d5) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '417b87157261719043d8138670755f1a') in 0.000544 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 0
+========================================================================
+Received Import Request.
+  Time since last request: 89.796177 seconds.
+  path: Assets/Sprite/JSWorldFamous/wf1_The Persistence of Memory.png
+  artifactKey: Guid(778c98f32c916d44babe14ba5839f2e8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Sprite/JSWorldFamous/wf1_The Persistence of Memory.png using Guid(778c98f32c916d44babe14ba5839f2e8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'c0178064154da074ce7cb52e7abab0b2') in 0.059080 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 2
+========================================================================
+Received Import Request.
+  Time since last request: 374.254390 seconds.
+  path: Assets/Sprite/JSWorldFamous/wf1_The Persistence of Memory.png
+  artifactKey: Guid(778c98f32c916d44babe14ba5839f2e8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Sprite/JSWorldFamous/wf1_The Persistence of Memory.png using Guid(778c98f32c916d44babe14ba5839f2e8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'b1a708ee9722ece87996817edfb5dfbd') in 0.023358 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 2
+========================================================================
+Received Import Request.
+  Time since last request: 164.091711 seconds.
+  path: Assets/3Dfrk/Frames with pictures/Textures/WorldFamous/WorldFamous1_The Persistence of Memory.png
+  artifactKey: Guid(fcdda0ebf8be430469463ad776786d3b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/3Dfrk/Frames with pictures/Textures/WorldFamous/WorldFamous1_The Persistence of Memory.png using Guid(fcdda0ebf8be430469463ad776786d3b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'b65ec5fab55ad7a61870b4e1a5a327a9') in 0.054600 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 2
+========================================================================
+Received Import Request.
+  Time since last request: 1819.851473 seconds.
+  path: Assets/3Dfrk/Frames with pictures/Textures/WorldFamous/ưf1_The Persistence of Memory.png
+  artifactKey: Guid(fcdda0ebf8be430469463ad776786d3b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/3Dfrk/Frames with pictures/Textures/WorldFamous/ưf1_The Persistence of Memory.png using Guid(fcdda0ebf8be430469463ad776786d3b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'f1f969f42c9759165c23529ef9d4a453') in 0.019088 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 2
+========================================================================
+Received Import Request.
+  Time since last request: 6.009788 seconds.
+  path: Assets/3Dfrk/Frames with pictures/Textures/WorldFamous/wf1_The Persistence of Memory.png
+  artifactKey: Guid(fcdda0ebf8be430469463ad776786d3b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/3Dfrk/Frames with pictures/Textures/WorldFamous/wf1_The Persistence of Memory.png using Guid(fcdda0ebf8be430469463ad776786d3b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'fd500ef5e97cffae9b09d3376bd56465') in 0.014992 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 2
+========================================================================
+Received Import Request.
+  Time since last request: 1110.804799 seconds.
+  path: Assets/Resources/Object/3D Global
+  artifactKey: Guid(9cf51d1540a4d8a419c23c58c89af649) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Resources/Object/3D Global using Guid(9cf51d1540a4d8a419c23c58c89af649) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'f400078cb55f3a411d54b7fed0c0196a') in 0.001112 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 0
+========================================================================
+Received Import Request.
+  Time since last request: 97.437067 seconds.
+  path: Assets/3Dfrk/Frames with pictures/Textures/WorldFamous/wf2_The Scream.png
+  artifactKey: Guid(e2a70bcbdf7d6db46a2a6366056ac4b2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/3Dfrk/Frames with pictures/Textures/WorldFamous/wf2_The Scream.png using Guid(e2a70bcbdf7d6db46a2a6366056ac4b2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '9618ce487e7162885eb8ac9ba206c6cb') in 0.017895 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 2
+========================================================================
+Received Import Request.
+  Time since last request: 50.383863 seconds.
+  path: Assets/3Dfrk/Frames with pictures/Textures/WorldFamous/wf4_The Kiss.png
+  artifactKey: Guid(f1a0d08de90fa904ea655e013112d371) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/3Dfrk/Frames with pictures/Textures/WorldFamous/wf4_The Kiss.png using Guid(f1a0d08de90fa904ea655e013112d371) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'ee190fa27cd29e89227e2b912bd7e171') in 0.059524 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 2
+========================================================================
+Received Import Request.
+  Time since last request: 5.258717 seconds.
+  path: Assets/3Dfrk/Frames with pictures/Textures/WorldFamous/wf5_Girl with a Pearl Earring.png
+  artifactKey: Guid(d30b79f58b9647d4e8a67063bf7bb0ed) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/3Dfrk/Frames with pictures/Textures/WorldFamous/wf5_Girl with a Pearl Earring.png using Guid(d30b79f58b9647d4e8a67063bf7bb0ed) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'd113a1e71f28e2fd896a41b2c20125ce') in 0.057665 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 2
+========================================================================
+Received Import Request.
+  Time since last request: 6.121284 seconds.
+  path: Assets/3Dfrk/Frames with pictures/Textures/WorldFamous/wf6_The Night Watch.png
+  artifactKey: Guid(67cc46c0cc60f0d43874da6b15f1c632) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/3Dfrk/Frames with pictures/Textures/WorldFamous/wf6_The Night Watch.png using Guid(67cc46c0cc60f0d43874da6b15f1c632) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '9a9e47759fdf3a6515c6a2e39674d3cc') in 0.015515 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 2
+========================================================================
+Received Import Request.
+  Time since last request: 4.439723 seconds.
+  path: Assets/3Dfrk/Frames with pictures/Textures/WorldFamous/wf7_Las Meninas.png
+  artifactKey: Guid(59032abcadcdc794e952e6c29f555dc1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/3Dfrk/Frames with pictures/Textures/WorldFamous/wf7_Las Meninas.png using Guid(59032abcadcdc794e952e6c29f555dc1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'd67f10c7a2a96996a6658771b4968c6f') in 0.017957 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 2
+========================================================================
+Received Import Request.
+  Time since last request: 4.546340 seconds.
+  path: Assets/3Dfrk/Frames with pictures/Textures/WorldFamous/wf8_The Birth of Venus.png
+  artifactKey: Guid(17c13dc30e38daf44ba95986cd5423c7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/3Dfrk/Frames with pictures/Textures/WorldFamous/wf8_The Birth of Venus.png using Guid(17c13dc30e38daf44ba95986cd5423c7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '6e93a6ca370231cfde71368651d6fb27') in 0.057244 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 2
+========================================================================
+Received Import Request.
+  Time since last request: 4.759422 seconds.
+  path: Assets/3Dfrk/Frames with pictures/Textures/WorldFamous/wf9_Liberty Leading the People.png
+  artifactKey: Guid(eb3f88f2aa2cc2b4f870ffa21f67de08) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/3Dfrk/Frames with pictures/Textures/WorldFamous/wf9_Liberty Leading the People.png using Guid(eb3f88f2aa2cc2b4f870ffa21f67de08) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'd818fbbc87a136d1850dc0d3e8023b32') in 0.059156 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 2
+========================================================================
+Received Import Request.
+  Time since last request: 3.833149 seconds.
+  path: Assets/3Dfrk/Frames with pictures/Textures/WorldFamous/wf10_The Raft of the Medusa.png
+  artifactKey: Guid(54d86860a19b033438dbcf475149d0bc) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/3Dfrk/Frames with pictures/Textures/WorldFamous/wf10_The Raft of the Medusa.png using Guid(54d86860a19b033438dbcf475149d0bc) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '668a13338e9e64b3b35d1196dd17014a') in 0.016352 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 2
+========================================================================
+Received Import Request.
+  Time since last request: 3.266638 seconds.
+  path: Assets/3Dfrk/Frames with pictures/Textures/WorldFamous/wf11_Water Lilies.png
+  artifactKey: Guid(40667d25467709844915e125ac025cda) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/3Dfrk/Frames with pictures/Textures/WorldFamous/wf11_Water Lilies.png using Guid(40667d25467709844915e125ac025cda) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '7d0b8683071bb8d2d476ee757254f4c7') in 0.058695 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 2
+========================================================================
+Received Import Request.
+  Time since last request: 62.569800 seconds.
+  path: Assets/3Dfrk/Frames with pictures/Textures/WorldFamous/wf3_American Gothic.png
+  artifactKey: Guid(9349f8bf64618fa4cbc379facf6052cd) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/3Dfrk/Frames with pictures/Textures/WorldFamous/wf3_American Gothic.png using Guid(9349f8bf64618fa4cbc379facf6052cd) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '249b12526cc1eab049d2391a43411504') in 0.015720 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 2
+========================================================================
+Received Import Request.
+  Time since last request: 288.333946 seconds.
   path: ProjectSettings/TagManager.asset
   artifactKey: Guid(00000000000000003000000000000000) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing ProjectSettings/TagManager.asset using Guid(00000000000000003000000000000000) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '81f399fc3082267272544e3ad444cdda') in 0.013104 seconds
+Start importing ProjectSettings/TagManager.asset using Guid(00000000000000003000000000000000) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'f4d52b8ebd132d8c29fea45432dfa1f7') in 0.001281 seconds
 Number of updated asset objects reloaded before import = 0
 Number of asset objects unloaded after import = 0
 ========================================================================
 Received Prepare
 Begin MonoManager ReloadAssembly
-- Loaded All Assemblies, in  0.678 seconds
-Refreshing native plugins compatible for Editor in 2.38 ms, found 3 plugins.
+- Loaded All Assemblies, in  0.645 seconds
+Refreshing native plugins compatible for Editor in 2.02 ms, found 3 plugins.
 Native extension for WindowsStandalone target not found
 Native extension for Android target not found
 [Package Manager] Server::EnsureServerProcessIsRunning -- launch failed, reason: Unity was launched with the -noUpm command-line argument
 [Package Manager] UpmClient::Send -- Unable to send message (not connected to UPM process).
 [Package Manager] Cannot connect to Unity Package Manager local server
 Mono: successfully reloaded assembly
-- Finished resetting the current domain, in  0.817 seconds
-Domain Reload Profiling: 1494ms
-	BeginReloadAssembly (334ms)
+- Finished resetting the current domain, in  0.891 seconds
+Domain Reload Profiling: 1536ms
+	BeginReloadAssembly (217ms)
 		ExecutionOrderSort (0ms)
-		DisableScriptedObjects (13ms)
+		DisableScriptedObjects (6ms)
 		BackupInstance (0ms)
 		ReleaseScriptingObjects (0ms)
-		CreateAndSetChildDomain (99ms)
-	RebuildCommonClasses (34ms)
-	RebuildNativeTypeToScriptingClass (11ms)
-	initialDomainReloadingComplete (27ms)
-	LoadAllAssembliesAndSetupDomain (272ms)
-		LoadAssemblies (411ms)
+		CreateAndSetChildDomain (55ms)
+	RebuildCommonClasses (44ms)
+	RebuildNativeTypeToScriptingClass (21ms)
+	initialDomainReloadingComplete (60ms)
+	LoadAllAssembliesAndSetupDomain (303ms)
+		LoadAssemblies (405ms)
 		RebuildTransferFunctionScriptingTraits (0ms)
-		AnalyzeDomain (16ms)
-			TypeCache.Refresh (9ms)
+		AnalyzeDomain (20ms)
+			TypeCache.Refresh (11ms)
 				TypeCache.ScanAssembly (0ms)
 			ScanForSourceGeneratedMonoScriptInfo (0ms)
-			ResolveRequiredComponents (6ms)
-	FinalizeReload (817ms)
+			ResolveRequiredComponents (7ms)
+	FinalizeReload (892ms)
 		ReleaseScriptCaches (0ms)
 		RebuildScriptCaches (0ms)
-		SetupLoadedEditorAssemblies (398ms)
+		SetupLoadedEditorAssemblies (412ms)
 			LogAssemblyErrors (0ms)
-			InitializePlatformSupportModulesInManaged (23ms)
+			InitializePlatformSupportModulesInManaged (36ms)
 			SetLoadedEditorAssemblies (5ms)
 			RefreshPlugins (0ms)
-			BeforeProcessingInitializeOnLoad (61ms)
-			ProcessInitializeOnLoadAttributes (283ms)
+			BeforeProcessingInitializeOnLoad (64ms)
+			ProcessInitializeOnLoadAttributes (282ms)
 			ProcessInitializeOnLoadMethodAttributes (22ms)
-			AfterProcessingInitializeOnLoad (4ms)
+			AfterProcessingInitializeOnLoad (2ms)
 			EditorAssembliesLoaded (0ms)
 		ExecutionOrderSort2 (0ms)
-		AwakeInstancesAfterBackupRestoration (7ms)
-Refreshing native plugins compatible for Editor in 1.82 ms, found 3 plugins.
+		AwakeInstancesAfterBackupRestoration (8ms)
+Refreshing native plugins compatible for Editor in 2.24 ms, found 3 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Unloading 3505 Unused Serialized files (Serialized files now loaded: 0)
-Unloading 40 unused Assets / (1.2 MB). Loaded Objects now: 4008.
+Unloading 40 unused Assets / (1.2 MB). Loaded Objects now: 4010.
 Memory consumption went from 146.4 MB to 145.2 MB.
-Total: 4.820800 ms (FindLiveObjects: 0.314200 ms CreateObjectMapping: 0.129500 ms MarkObjects: 3.295500 ms  DeleteObjects: 1.080100 ms)
+Total: 3.922500 ms (FindLiveObjects: 0.264000 ms CreateObjectMapping: 0.111300 ms MarkObjects: 2.888400 ms  DeleteObjects: 0.657300 ms)
 
 Prepare: number of updated asset objects reloaded= 0
 AssetImportParameters requested are different than current active one (requested -> active):
@@ -258,19 +410,3 @@ AssetImportParameters requested are different than current active one (requested
   custom:video-encoder-webm-vp8: eb34c28f22e8b96e1ab97ce403110664 -> 
   custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
   custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
-========================================================================
-Received Import Request.
-  Time since last request: 4151.688314 seconds.
-  path: Assets/3Dfrk/Frames with pictures/Materials/New Folder
-  artifactKey: Guid(0a9a11ac7c1d7394ebd689759be629de) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/3Dfrk/Frames with pictures/Materials/New Folder using Guid(0a9a11ac7c1d7394ebd689759be629de) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'd3505757227ebc299cf8e24b81eeb9fd') in 0.016779 seconds
-Number of updated asset objects reloaded before import = 0
-Number of asset objects unloaded after import = 0
-========================================================================
-Received Import Request.
-  Time since last request: 10.810531 seconds.
-  path: Assets/3Dfrk/Frames with pictures/Materials/WorldFamous
-  artifactKey: Guid(0a9a11ac7c1d7394ebd689759be629de) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/3Dfrk/Frames with pictures/Materials/WorldFamous using Guid(0a9a11ac7c1d7394ebd689759be629de) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'e85714b5adc518e0a0b66bf95e269554') in 0.000532 seconds
-Number of updated asset objects reloaded before import = 0
-Number of asset objects unloaded after import = 0
