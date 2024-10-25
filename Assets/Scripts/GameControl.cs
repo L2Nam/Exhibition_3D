@@ -12,6 +12,7 @@ public class GameControl : MonoBehaviour
     [SerializeField] SoundManager soundManager;
     [SerializeField] TextMeshProUGUI textScore;
     [SerializeField] List<Light> listLightVanGogh = new List<Light>();
+    [SerializeField] List<Light> listLightPicasso = new List<Light>();
 
     static public bool checkPuzzle = false;
     public static int playerScore = 0;
@@ -101,9 +102,13 @@ public class GameControl : MonoBehaviour
                             dot.SetActive(false);
                             Cursor.visible = true;
                             Cursor.lockState = CursorLockMode.None;
+                            PuzzleControl.artist = obj.layer - 7;
                             break;
-                        case "changelight":
-                            OnClickChangeLight();
+                        case "changelightVG":
+                            OnClickChangeLightVG();
+                            break;
+                        case "changelightPi":
+                            OnClickChangeLightPi();
                             break;
                     }
                 }
@@ -181,12 +186,21 @@ public class GameControl : MonoBehaviour
         Debug.Log("OnApplicationQuit");
     }
 
-    public void OnClickChangeLight()
+    public void OnClickChangeLightVG()
     {
         currentColorIndex = (currentColorIndex + 1) % colors.Length;
         for (int i = 0; i < listLightVanGogh.Count; i++)
         {
             listLightVanGogh[i].color = colors[currentColorIndex];
+        }
+    }
+
+    public void OnClickChangeLightPi()
+    {
+        currentColorIndex = (currentColorIndex + 1) % colors.Length;
+        for (int i = 0; i < listLightPicasso.Count; i++)
+        {
+            listLightPicasso[i].color = colors[currentColorIndex];
         }
     }
 

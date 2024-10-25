@@ -1,6 +1,10 @@
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+using TMPro;
 
 
 public class PuzzleControl : MonoBehaviour
@@ -14,8 +18,9 @@ public class PuzzleControl : MonoBehaviour
     [SerializeField] Camera mainCamera;
     [SerializeField] GameObject choose_game;
     [SerializeField] GameObject choose_mode_jigsaw;
-    [SerializeField] GameObject choose_painting;
+    [SerializeField] List<GameObject> List_choose_painting = new List<GameObject>();
 
+    public static int artist = 0;
     public static int mode = 0;
     public static int paiting = -1;
 
@@ -36,7 +41,10 @@ public class PuzzleControl : MonoBehaviour
     {
         choose_game.SetActive(true);
         choose_mode_jigsaw.SetActive(false);
-        choose_painting.SetActive(false);
+        for (int i = 0; i < List_choose_painting.Count; i++)
+        {
+            List_choose_painting[i].SetActive(false);
+        }
     }
 
     void SaveCameraPosition()
@@ -60,7 +68,10 @@ public class PuzzleControl : MonoBehaviour
         GameControl.checkPuzzle = false;
         choose_game.SetActive(true);
         choose_mode_jigsaw.SetActive(false);
-        choose_painting.SetActive(false);
+        for (int i = 0; i < List_choose_painting.Count; i++)
+        {
+            List_choose_painting[i].SetActive(false);
+        }
         gameObject.SetActive(false);
         Cursor.visible = false;
         Cursor.lockState = CursorLockMode.Locked;
@@ -71,14 +82,18 @@ public class PuzzleControl : MonoBehaviour
     {
         choose_game.SetActive(false);
         choose_mode_jigsaw.SetActive(true);
-        choose_painting.SetActive(false);
+        for (int i = 0; i < List_choose_painting.Count; i++)
+        {
+            List_choose_painting[i].SetActive(false);
+        }
     }
 
     public void OnClickJigsawMode(int _mode)
     {
+        Debug.Log(artist);
         choose_game.SetActive(false);
         choose_mode_jigsaw.SetActive(false);
-        choose_painting.SetActive(true);
+        List_choose_painting[artist].SetActive(true);
         mode = _mode;
     }
 
