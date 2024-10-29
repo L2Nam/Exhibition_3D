@@ -13,6 +13,7 @@ public class GameControl : MonoBehaviour
     [SerializeField] TextMeshProUGUI textScore;
     [SerializeField] List<Light> listLightVanGogh = new List<Light>();
     [SerializeField] List<Light> listLightPicasso = new List<Light>();
+    [SerializeField] List<Light> listLightLeonardo = new List<Light>();
 
     static public bool checkPuzzle = false;
     public static int playerScore = 0;
@@ -20,7 +21,9 @@ public class GameControl : MonoBehaviour
     public bool checkSound = false;
     string namePopup = "";
     private int currentColorIndex = 0;
-    private Color[] colors = new Color[5];
+    private int currentColorIndexPi = 0;
+    private int currentColorIndexLeo = 5;
+    private Color[] colors = new Color[6];
 
     private void Start()
     {
@@ -30,6 +33,7 @@ public class GameControl : MonoBehaviour
         colors[2] = Color.red;
         colors[3] = Color.yellow;
         colors[4] = new Color(0.5f, 0f, 0.5f);
+        colors[5] = Color.white;
     }
 
     void Update()
@@ -109,6 +113,9 @@ public class GameControl : MonoBehaviour
                             break;
                         case "changelightPi":
                             OnClickChangeLightPi();
+                            break;
+                        case "changelightLeo":
+                            OnClickChangeLightLeo();
                             break;
                     }
                 }
@@ -197,10 +204,19 @@ public class GameControl : MonoBehaviour
 
     public void OnClickChangeLightPi()
     {
-        currentColorIndex = (currentColorIndex + 1) % colors.Length;
+        currentColorIndexPi = (currentColorIndexPi + 1) % colors.Length;
         for (int i = 0; i < listLightPicasso.Count; i++)
         {
-            listLightPicasso[i].color = colors[currentColorIndex];
+            listLightPicasso[i].color = colors[currentColorIndexPi];
+        }
+    }
+
+    public void OnClickChangeLightLeo()
+    {
+        currentColorIndexLeo = (currentColorIndexLeo + 1) % colors.Length;
+        for (int i = 0; i < listLightLeonardo.Count; i++)
+        {
+            listLightLeonardo[i].color = colors[currentColorIndexLeo];
         }
     }
 
