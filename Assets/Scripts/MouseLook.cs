@@ -41,6 +41,6 @@ public class MouseLook : MonoBehaviour
         transform.Rotate(Vector3.up, mouseX * rotationSpeed, Space.World);
         transform.Rotate(Vector3.left, mouseY * rotationSpeed, Space.Self);
 
-        transform.position = new Vector3(transform.position.x, platform + 1.75f, transform.position.z);
+        transform.position = new Vector3(transform.position.x, platform + 1.9f, transform.position.z);
     }
 }
