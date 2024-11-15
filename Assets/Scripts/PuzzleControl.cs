@@ -9,7 +9,6 @@ using TMPro;
 
 public class PuzzleControl : MonoBehaviour
 {
-    [SerializeField] GameObject win;
     [SerializeField] GameObject dot;
     [SerializeField] Button btn_jigsaw;
     [SerializeField] Button btn_qa;
@@ -18,11 +17,15 @@ public class PuzzleControl : MonoBehaviour
     [SerializeField] Camera mainCamera;
     [SerializeField] GameObject choose_game;
     [SerializeField] GameObject choose_mode_jigsaw;
+    [SerializeField] GameObject choose_mode_QA;
     [SerializeField] List<GameObject> List_choose_painting = new List<GameObject>();
+
+
 
     public static int artist = 0;
     public static int mode = 0;
     public static int paiting = -1;
+    public static int WallNos;
 
     private void Awake()
     {
@@ -68,6 +71,7 @@ public class PuzzleControl : MonoBehaviour
         GameControl.checkPuzzle = false;
         choose_game.SetActive(true);
         choose_mode_jigsaw.SetActive(false);
+        choose_mode_QA.SetActive(false);
         for (int i = 0; i < List_choose_painting.Count; i++)
         {
             List_choose_painting[i].SetActive(false);
@@ -82,6 +86,16 @@ public class PuzzleControl : MonoBehaviour
     {
         choose_game.SetActive(false);
         choose_mode_jigsaw.SetActive(true);
+        for (int i = 0; i < List_choose_painting.Count; i++)
+        {
+            List_choose_painting[i].SetActive(false);
+        }
+    }
+
+    public void OnClickQA()
+    {
+        choose_game.SetActive(false);
+        choose_mode_QA.SetActive(true);
         for (int i = 0; i < List_choose_painting.Count; i++)
         {
             List_choose_painting[i].SetActive(false);
@@ -113,5 +127,12 @@ public class PuzzleControl : MonoBehaviour
         {
             SceneManager.LoadScene("puzzle4x4");
         }
+    }
+
+    public void onClickQAmode(int modeQA)
+    {
+        SaveCameraPosition();
+        WallNos = modeQA;
+        SceneManager.LoadScene("QAGame");
     }
 }
