@@ -59,12 +59,6 @@ public class GameControl : MonoBehaviour
                 {
                     switch (obj.tag)
                     {
-                        case "forest":
-                            SetActivePopup("forest");
-                            break;
-                        case "house":
-                            SetActivePopup("house");
-                            break;
                         case "blue":
                             SetActivePopup("blue");
                             break;
