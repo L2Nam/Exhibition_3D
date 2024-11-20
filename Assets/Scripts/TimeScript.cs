@@ -7,6 +7,7 @@ using TMPro;
 
 public class TimeScript : MonoBehaviour
 {
+    public EndTrigger endTrigger;
     int WallNos = PuzzleControl.WallNos;
     public static int timeValue = 10;
     
@@ -29,8 +30,8 @@ public class TimeScript : MonoBehaviour
     }
     IEnumerator RestartLevel()
     {
-        yield return new WaitForSeconds(5);
-        SceneManager.LoadScene(2);
+        yield return new WaitForSeconds(3);
+        endTrigger.EndGame();
         timeValue = 16 * WallNos;
         ScoreScript.scoreValue = 0;
     }

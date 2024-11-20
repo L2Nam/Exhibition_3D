@@ -10,6 +10,7 @@ public class QAControl : MonoBehaviour
     public GameObject player;
     public GameObject soundGame;
     public TextMeshProUGUI question;
+    public ScoreScript scorePlayer;
 
     public static string questionText;
     int WallNos = PuzzleControl.WallNos;
@@ -17,6 +18,7 @@ public class QAControl : MonoBehaviour
     public GameObject Finish;
 
     int countTrue = 1;
+    bool canPlay = false;
 
     void Start()
     {
@@ -34,7 +36,7 @@ public class QAControl : MonoBehaviour
 
     void Update()
     {
-        if (Input.GetMouseButtonDown(0))
+        if (Input.GetMouseButtonDown(0) && canPlay)
         {
             Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
             RaycastHit hit;
@@ -50,7 +52,8 @@ public class QAControl : MonoBehaviour
 
                     if (Questions.QAns[TriggerWall.test] == check.Substring(0, 1))
                     {
-                        ScoreScript.scoreValue += 100;
+                        ScoreScript.scoreValue += 200;
+                        scorePlayer.UpdateScore();
                         GameObject fractured = Instantiate(broken, wallPosition, Quaternion.Euler(90f, 90f, 0f));
                         Destroy(wall);
 
@@ -61,13 +64,16 @@ public class QAControl : MonoBehaviour
                             body.mass = 0.001f;
                         }
                         PlayAudio("Right");
+                        canPlay = false;
                         countTrue++;
+                        question.text = "";
                         player.transform.DOMove(new Vector3(wallPosition.x, 0.5f, wallPosition.z), 1.7f).SetEase(Ease.OutCubic).OnComplete(MovePlayer);
                     }
                     else
                     {
                         Debug.Log("wrong");
-                        ScoreScript.scoreValue -= 50;
+                        ScoreScript.scoreValue -= 100;
+                        scorePlayer.UpdateScore();
                         StartCoroutine(ShakeObject(0.2f, 0.1f, wall, wallPosition));
                         PlayAudio("Error");
                     }
@@ -107,6 +113,7 @@ public class QAControl : MonoBehaviour
             {
                 PlayAudio("Question_Pop");
                 question.text = questionText;
+                canPlay = true;
             });
     }
 }

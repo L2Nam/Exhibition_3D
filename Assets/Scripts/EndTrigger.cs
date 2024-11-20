@@ -52,4 +52,25 @@ public class EndTrigger : MonoBehaviour
             });
         }
     }
+
+    public void EndGame()
+    {
+        startcv.enabled = false;
+        endcv.enabled = true;
+        GameControl.playerScore += ScoreScript.scoreValue;
+        win.transform.DOLocalJump(Vector2.zero, 2f, 4, 2f).OnComplete(() =>
+        {
+            win.transform.DOLocalMove(new Vector2(0, -450), 1.2f).OnComplete(() =>
+            {
+                win.SetActive(false);
+                Color originalColor = textComplete.color;
+                textComplete.color = new Color(originalColor.r, originalColor.g, originalColor.b, 0);
+                textComplete.gameObject.SetActive(true);
+                textComplete.DOFade(1, 1.5f).OnComplete(() =>
+                {
+                    btnManager.SetActive(true);
+                });
+            });
+        });
+    }
 }

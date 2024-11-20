@@ -15,8 +15,8 @@ public class ScoreScript : MonoBehaviour
     }
 
 
-    void Update()
+    public void UpdateScore()
     {
-        score.text = "Score: " + scoreValue;
+        score.GetComponent<TextMeshProUGUI>().text = "Score: " + scoreValue;
     }
 }
