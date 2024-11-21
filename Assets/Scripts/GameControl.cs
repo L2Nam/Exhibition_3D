@@ -13,7 +13,6 @@ public class GameControl : MonoBehaviour
     [SerializeField] TextMeshProUGUI textScore;
     [SerializeField] List<Light> listLightVanGogh = new List<Light>();
     [SerializeField] List<Light> listLightPicasso = new List<Light>();
-    [SerializeField] List<Light> listLightLeonardo = new List<Light>();
 
     static public bool checkPuzzle = false;
     public static int playerScore = 0;
