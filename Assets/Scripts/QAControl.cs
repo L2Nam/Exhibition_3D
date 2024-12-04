@@ -1,15 +1,19 @@
 ﻿using DG.Tweening;
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
+using UnityEngine.Windows;
+using Random = UnityEngine.Random;
 
 public class QAControl : MonoBehaviour
 {
     public GameObject broken;
     public GameObject player;
     public GameObject soundGame;
-    public TextMeshProUGUI question;
+    public GameObject question;
+    public TextMeshProUGUI[] questionElements = new TextMeshProUGUI[5];
     public ScoreScript scorePlayer;
 
     public static string questionText;
@@ -36,9 +40,9 @@ public class QAControl : MonoBehaviour
 
     void Update()
     {
-        if (Input.GetMouseButtonDown(0) && canPlay)
+        if (UnityEngine.Input.GetMouseButtonDown(0) && canPlay)
         {
-            Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
+            Ray ray = Camera.main.ScreenPointToRay(UnityEngine.Input.mousePosition);
             RaycastHit hit;
 
             if (Physics.Raycast(ray, out hit))
@@ -66,7 +70,7 @@ public class QAControl : MonoBehaviour
                         PlayAudio("Right");
                         canPlay = false;
                         countTrue++;
-                        question.text = "";
+                        question.SetActive(false);
                         player.transform.DOMove(new Vector3(wallPosition.x, 0.5f, wallPosition.z), 1.7f).SetEase(Ease.OutCubic).OnComplete(MovePlayer);
                     }
                     else
@@ -111,8 +115,13 @@ public class QAControl : MonoBehaviour
         player.transform.DOMove(new Vector3(0f, 0.5f, targetZ), 3f)
             .SetEase(Ease.OutCubic).OnComplete(()=>
             {
+                string[] lines = questionText.Split(new[] { '\n' }, StringSplitOptions.None);
+                for (int i = 0; i < 5; i++)
+                {
+                    questionElements[i].text = lines[i];
+                }
                 PlayAudio("Question_Pop");
-                question.text = questionText;
+                question.SetActive(true);
                 canPlay = true;
             });
     }

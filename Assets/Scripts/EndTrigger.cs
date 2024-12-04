@@ -11,6 +11,7 @@ public class EndTrigger : MonoBehaviour
     public GameObject win;
     public TextMeshProUGUI textComplete;
     public GameObject btnManager;
+    public TextMeshProUGUI gameScore;
     public Canvas startcv;
     public Canvas endcv;
 
@@ -35,6 +36,7 @@ public class EndTrigger : MonoBehaviour
         {
             startcv.enabled = false;
             endcv.enabled = true;
+            gameScore.text = "Score: " + ScoreScript.scoreValue.ToString();
             GameControl.playerScore += ScoreScript.scoreValue;
             win.transform.DOLocalJump(Vector2.zero, 2f, 4, 2f).OnComplete(() =>
             {
@@ -57,6 +59,7 @@ public class EndTrigger : MonoBehaviour
     {
         startcv.enabled = false;
         endcv.enabled = true;
+        gameScore.text = "Score: " + ScoreScript.scoreValue.ToString();
         GameControl.playerScore += ScoreScript.scoreValue;
         win.transform.DOLocalJump(Vector2.zero, 2f, 4, 2f).OnComplete(() =>
         {

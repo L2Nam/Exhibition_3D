@@ -8,7 +8,7 @@ public class GameControl : MonoBehaviour
     [SerializeField] GameObject puzzle;
     [SerializeField] GameObject dot;
     [SerializeField] GameObject info;
-    [SerializeField] GameObject camera;
+    [SerializeField] GameObject cameraGame;
     [SerializeField] SoundManager soundManager;
     [SerializeField] TextMeshProUGUI textScore;
     [SerializeField] List<Light> listLightVanGogh = new List<Light>();
@@ -46,7 +46,7 @@ public class GameControl : MonoBehaviour
             {
                 GameObject obj = hit.collider.gameObject;
                 Debug.Log(obj + " ===> " + obj.tag);
-                float distance = Vector3.Distance(camera.transform.position, hit.point);
+                float distance = Vector3.Distance(cameraGame.transform.position, hit.point);
                 if (distance > 10 || checkPuzzle)
                     return;
                 if (obj.layer == 6) // information

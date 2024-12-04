@@ -33,7 +33,6 @@ public class TimeScript : MonoBehaviour
         yield return new WaitForSeconds(3);
         endTrigger.EndGame();
         timeValue = 16 * WallNos;
-        ScoreScript.scoreValue = 0;
     }
     void timeCount()
     {
