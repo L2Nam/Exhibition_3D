@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Video;
 using TMPro;
 
 public class GameControl : MonoBehaviour
@@ -13,11 +14,15 @@ public class GameControl : MonoBehaviour
     [SerializeField] TextMeshProUGUI textScore;
     [SerializeField] List<Light> listLightVanGogh = new List<Light>();
     [SerializeField] List<Light> listLightPicasso = new List<Light>();
+    [SerializeField] VideoPlayer videoPlayer;
+    [SerializeField] GameObject thumbnail;
+
 
     static public bool checkPuzzle = false;
     public static int playerScore = 0;
     public bool checkPopup = true;
     public bool checkSound = false;
+    public bool checkVideo = false;
     string namePopup = "";
     private int currentColorIndex = 0;
     private int currentColorIndexPi = 0;
@@ -104,6 +109,25 @@ public class GameControl : MonoBehaviour
                             break;
                         case "changelightPi":
                             OnClickChangeLightPi();
+                            break;
+                        case "video":
+                            namePopup = "video";
+                            if (checkVideo)
+                            {
+                                thumbnail.SetActive(true);
+                                videoPlayer.Pause();
+                                soundManager.stopAllCurrentEffect();
+                                checkSound = false;
+                                checkVideo = false;
+                            }
+                            else
+                            {
+                                thumbnail.SetActive(false);
+                                videoPlayer.Play();
+                                PlayAudioDescribe();
+                                checkSound = true;
+                                checkVideo = true;
+                            }
                             break;
                     }
                 }
