@@ -97,6 +97,7 @@ public class PieceJigsawControl : MonoBehaviour
                 movable = false;
                 Board.GetComponent<puzzleBoard>().PiecesInPlace++;
                 Debug.Log("correct pieces" + Board.GetComponent<puzzleBoard>().PiecesInPlace);
+                jgControl.PlayAudio("Right");
                 if (Board.GetComponent<puzzleBoard>().PiecesInPlace == level)
                 {
                     Timer.GetComponent<Timer>().active = false;
@@ -107,6 +108,7 @@ public class PieceJigsawControl : MonoBehaviour
             }
             else
             {
+                jgControl.PlayAudio("Error");
                 transform.position = originalPos;
             }
         }

@@ -80,7 +80,6 @@ public class SoundManager : MonoBehaviour
 
             if (auSrc.isPlaying)
             {
-                auSrc.Stop();
                 listAudioSrc.Add(auSrc);
             }
         });

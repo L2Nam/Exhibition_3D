@@ -108,14 +108,14 @@ public class GameControl : MonoBehaviour
                             OnClickChangeLightVG();
                             break;
                         case "changelightPi":
-                            OnClickChangeLightPi();
+                            OnClickChangeLightPi(); 
                             break;
                         case "video":
                             namePopup = "video";
                             if (checkVideo)
                             {
                                 thumbnail.SetActive(true);
-                                videoPlayer.Pause();
+                                videoPlayer.Stop();
                                 soundManager.stopAllCurrentEffect();
                                 checkSound = false;
                                 checkVideo = false;

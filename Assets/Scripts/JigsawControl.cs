@@ -13,6 +13,8 @@ public class JigsawControl : MonoBehaviour
     [SerializeField] TextMeshProUGUI textComplete;
     [SerializeField] GameObject btnManager;
     [SerializeField] Timer time;
+    [SerializeField] GameObject soundGame;
+
 
     public void OnClickBack()
     {
@@ -50,5 +52,12 @@ public class JigsawControl : MonoBehaviour
                 });
             });
         });
+    }
+
+    public void PlayAudio(string sound1)
+    {
+        Transform sound = soundGame.transform.Find(sound1);
+        AudioSource audioSource = sound.GetComponent<AudioSource>();
+        audioSource.Play();
     }
 }
